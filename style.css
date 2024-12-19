@@ -1,21 +1,5 @@
+/* Default theme (light) */
 :root {
-    --primary: #FFFFFF;
-    --secondary: #A1A1AA;
-    --accent: #6366F1;
-    --background: #09090B;
-    --surface: #18181B;
-    --text: #FFFFFF;
-    --gradient: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
-    --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.08);
-    --shadow-md: 0 4px 16px rgba(15, 23, 42, 0.12);
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --star-color: rgba(255, 255, 255, 0.8);
-    --star-opacity: 0.3;
-    --star-size: 2px;
-}
-
-/* Светлая тема */
-[data-theme="light"] {
     --primary: #18181B;
     --secondary: #52525B;
     --accent: #4F46E5;
@@ -23,33 +7,41 @@
     --surface: #F4F4F5;
     --text: #18181B;
     --gradient: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+    --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.08);
+    --shadow-md: 0 4px 16px rgba(15, 23, 42, 0.12);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --star-color: rgba(0, 0, 0, 0.3);
     --star-opacity: 0.8;
     --star-size: 3px;
 }
 
+/* Dark theme styles */
+body.dark-theme {
+    --primary: #FFFFFF;
+    --secondary: #A1A1AA;
+    --accent: #6366F1;
+    --background: #09090B;
+    --surface: #18181B;
+    --text: #FFFFFF;
+    --gradient: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
+    --star-color: rgba(255, 255, 255, 0.8);
+    --star-opacity: 0.3;
+    --star-size: 2px;
+}
+
 /* Theme Switcher */
 .theme-switch {
-    position: relative;
+    background: none;
+    border: none;
     width: 40px;
     height: 40px;
-    margin-left: 20px;
-    border-radius: 10px;
-    background: var(--surface);
-    border: 1px solid rgba(99, 102, 241, 0.2);
     cursor: pointer;
+    color: var(--primary);
+    font-size: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.4rem;
-    color: var(--primary);
-    transition: all 0.3s ease;
-}
-
-.theme-switch:hover {
-    background: var(--accent);
-    color: white;
-    transform: translateY(-2px);
+    margin-left: 20px;
 }
 
 .theme-switch .bx-sun {
@@ -168,17 +160,17 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(9, 9, 11, 0.8);
+    background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(12px);
     z-index: 1000;
     padding: 1rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-/* Add light mode styles for navbar */
-[data-theme="light"] .navbar {
-    background: rgba(244, 244, 245, 0.85);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+/* Dark theme navbar */
+body.dark-theme .navbar {
+    background: rgba(9, 9, 11, 0.8);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .navbar .container {
@@ -239,7 +231,7 @@ main {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 60px 0 20px;
+    padding-top: 100px;
     margin: 0;
 }
 
@@ -395,14 +387,8 @@ main {
 /* Footer */
 footer {
     padding: 2rem 0;
-    background: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-[data-theme="light"] footer {
-    background: rgba(255, 255, 255, 0.8);
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    background: var(--background);
+    border-top: 1px solid rgba(99, 102, 241, 0.1);
 }
 
 footer .container {
@@ -415,12 +401,13 @@ footer .container {
 footer p {
     color: var(--secondary);
     font-size: 0.9rem;
+    margin: 0;
 }
 
 .social-links {
     display: flex;
     gap: 1rem;
-    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .social-icon {
@@ -434,7 +421,8 @@ footer p {
     color: var(--primary);
     font-size: 1.2rem;
     transition: var(--transition);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.1);
+    text-decoration: none;
 }
 
 .social-icon:hover {
@@ -443,8 +431,26 @@ footer p {
     color: white;
 }
 
-[data-theme="light"] .social-icon {
-    border-color: rgba(0, 0, 0, 0.1);
+/* Dark theme adjustments */
+body.dark-theme .social-icon {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    footer {
+        padding: 1.5rem 0;
+    }
+    
+    .social-links {
+        gap: 0.75rem;
+    }
+    
+    .social-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 1.1rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -780,32 +786,31 @@ footer p {
 }
 
 .mobile-menu {
-    display: none;
     position: fixed;
     top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(9, 9, 11, 0.95);
-    backdrop-filter: blur(12px);
-    z-index: 999;
-    padding: 5rem 2rem;
-    align-items: center;
-    justify-content: center;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background: var(--background);
+    z-index: 1000;
+    transition: 0.3s ease;
     opacity: 0;
-    transition: all 0.3s ease;
+    visibility: hidden;
 }
 
-/* Light mode mobile menu */
-[data-theme="light"] .mobile-menu {
-    background: rgba(244, 244, 245, 0.95);
+.mobile-menu.active {
+    right: 0;
+    opacity: 1;
+    visibility: visible;
 }
 
 .mobile-menu-links {
+    height: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 2rem;
-    text-align: center;
 }
 
 .mobile-menu-links a {
@@ -891,7 +896,7 @@ footer p {
     }
 }
 
-/* Добавляем анимации */
+/* Довляем анимации */
 @keyframes float {
     0%, 100% { transform: translateY(0) scale(1); }
     50% { transform: translateY(-10px) scale(1.05); }
@@ -956,7 +961,7 @@ footer p {
     }
 }
 
-/* ачальн��е сос��ояние для анимируемых элементов */
+/* ачальне сосояние для анимируемых элементов */
 .hero-content,
 .work-item,
 .goal-card {
@@ -1013,7 +1018,7 @@ section {
     opacity: 0.4;
 }
 
-/* Черные ��везды для светлой темы */
+/* Черные везды для светлой темы */
 [data-theme="light"] .star {
     background-color: #000000;
     opacity: 0.3;
@@ -1228,7 +1233,7 @@ h1 {
     display: inline-block;
 }
 
-/* Анимация для выделенного текста */
+/* Анимация для выделенного ткста */
 .highlight::after {
     content: '';
     position: absolute;
@@ -1356,7 +1361,7 @@ h1 {
     }
 }
 
-/* Дополнитель��ые стили для малеьких экранов */
+/* Дополнительые стили для малеьких экранов */
 @media (max-width: 480px) {
     .profile-image {
         width: 180px;
@@ -1659,7 +1664,7 @@ h1 {
 }
 
 [data-theme="light"] .name-text {
-    background-image: linear-gradient(to right, #4338CA, #059669);  /* Более темные цвета для градиента */
+    background-image: linear-gradient(to right, #4338CA, #059669);  /* Более темнее цвета для градиента */
 }
 
 [data-theme="light"] .intro-line {
@@ -1943,19 +1948,15 @@ h1 {
     position: relative;
 }
 
-.typing-text::after {
+.typing-text.typing::after {
     content: '';
     position: absolute;
     right: -4px;
     top: 50%;
     transform: translateY(-50%);
-    height: 80%;
     width: 2px;
-    background: var(--accent);
-    animation: cursor-blink 0.8s infinite;
-}
-
-.typing-text.typing::after {
+    height: 1em;
+    background-color: var(--accent);
     animation: cursor-blink 0.8s infinite;
 }
 
@@ -1969,239 +1970,23 @@ h1 {
 }
 
 /* Make sure inline elements stay inline during typing */
-.typing-text-container {
-    white-space: nowrap;
+.intro-line {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
 }
 
-/* Update mobile styles for intro text */
+.intro-text h1.typing-text {
+    margin-bottom: 1rem;
+}
+
+/* Mobile adjustments for typing animation */
 @media (max-width: 768px) {
-    .intro-wrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-    }
-
-    .intro-text {
-        text-align: center;
-    }
-
-    .intro-lines {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        align-items: center;
-    }
-
     .intro-line {
-        font-size: 20px;
-        gap: 4px;
         justify-content: center;
-        white-space: normal;
-        max-width: 100%;
-        padding: 0 10px;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
     }
-
-    .typing-text-container {
-        white-space: normal;
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        gap: 4px;
+    
+    .typing-text.typing::after {
+        height: 0.8em;
     }
-
-    .typing-text {
-        white-space: normal;
-        display: inline-block;
-    }
-
-    /* Keep comma inline */
-    .typing-text + .text-gray {
-        display: inline-block;
-        margin-left: 0;
-    }
-
-    /* Ensure name and comma stay together */
-    .name-text.typing-text {
-        margin-right: 0;
-    }
-
-    .intro-text h1 {
-        font-size: 48px;
-        margin-bottom: 16px;
-    }
-}
-
-/* Even smaller screens */
-@media (max-width: 480px) {
-    .intro-line {
-        font-size: 18px;
-    }
-
-    .intro-text h1 {
-        font-size: 42px;
-    }
-}
-
-/* Coming Soon Page Styles */
-.coming-soon-page {
-    min-height: calc(100vh - 150px); /* Adjust for navbar and footer */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-top: 80px; /* Add margin to account for fixed navbar */
-}
-
-.coming-soon-page h1 {
-    font-size: 5rem;
-    font-weight: 700;
-    color: var(--primary);
-    margin: 0;
-    padding: 0;
-    z-index: 1;
-    position: relative;
-}
-
-.coming-soon-page .typing-text {
-    visibility: visible; /* Override the default hidden visibility */
-    opacity: 1;
-}
-
-/* Mobile styles for coming soon page */
-@media (max-width: 768px) {
-    .coming-soon-page h1 {
-        font-size: 3.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .coming-soon-page h1 {
-        font-size: 2.5rem;
-    }
-}
-
-/* Mobile Menu Styles */
-.mobile-menu {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 100%;
-    height: 100vh;
-    background: var(--background);
-    z-index: 1000;
-    transition: 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-}
-
-.mobile-menu.active {
-    right: 0;
-}
-
-.mobile-menu-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.mobile-menu-close {
-    background: none;
-    border: none;
-    color: var(--primary);
-    font-size: 2rem;
-    cursor: pointer;
-}
-
-.mobile-menu-links {
-    display: flex;
-    flex-direction: column;
-    padding: 2rem 1rem;
-    gap: 1.5rem;
-}
-
-.mobile-link {
-    color: var(--primary);
-    text-decoration: none;
-    font-size: 1.2rem;
-    transition: var(--transition);
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-}
-
-.mobile-link:hover,
-.mobile-link.active {
-    background: var(--surface);
-}
-
-.mobile-menu-footer {
-    margin-top: auto;
-    padding: 1rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.mobile-menu-footer .social-links {
-    justify-content: center;
-    margin-top: 0;
-}
-
-[data-theme="light"] .mobile-menu {
-    background: var(--background);
-}
-
-[data-theme="light"] .mobile-menu-header,
-[data-theme="light"] .mobile-menu-footer {
-    border-color: rgba(0, 0, 0, 0.1);
-}
-
-/* Add these styles for the navbar links */
-.nav-link {
-    position: relative;
-    text-decoration: none;
-    color: var(--text-color);
-    transition: color 0.3s ease;
-}
-
-.underline-animation {
-    position: relative;
-}
-
-.underline-animation::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -4px;
-    left: 0;
-    background-color: var(--accent-color);
-    transition: width 0.3s ease;
-}
-
-.underline-animation:hover::after,
-.underline-animation.active::after {
-    width: 100%;
-}
-
-/* Update the active link style */
-.nav-link.active {
-    color: var(--accent-color);
-}
-
-/* Add hover effect */
-.nav-link:hover {
-    color: var(--accent-color);
-}
-
-/* Mobile menu link styles */
-.mobile-menu-links .nav-link {
-    display: block;
-    padding: 15px 0;
-    font-size: 1.2rem;
 }
