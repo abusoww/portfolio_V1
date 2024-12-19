@@ -29,7 +29,7 @@
 .figma-cursor-ring {
     width: 40px;
     height: 40px;
-    border: 1.5px solid rgba(0, 0, 0, 0.8);
+    border: 1.5px solid rgba(199, 79, 84, 1);
     border-radius: 50%;
     position: fixed;
     top: 0;
