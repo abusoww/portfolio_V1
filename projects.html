@@ -8,27 +8,67 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/projects.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar">
         <div class="container">
-            <a href="/" class="logo">NA</a>
+            <a href="/" class="logo">
+                <span class="logo-text">NA</span>
+                <div class="logo-dot"></div>
+            </a>
+            
+            <button class="mobile-menu-btn">
+                <i class='bx bx-menu'></i>
+            </button>
+
             <ul class="nav-links">
                 <li><a href="/">Main</a></li>
                 <li><a href="/cv.html">CV</a></li>
                 <li><a href="/projects.html" class="active">Projects</a></li>
                 <li><a href="/contact.html">Contact</a></li>
             </ul>
+            <div class="theme-switch" id="themeSwitch">
+                <div class="switch-handle"></div>
+            </div>
         </div>
     </nav>
 
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <span class="logo-text">NA</span>
+            <button class="mobile-menu-close">
+                <i class='bx bx-x'></i>
+            </button>
+        </div>
+        <div class="mobile-menu-links">
+            <a href="/" class="mobile-link">Main</a>
+            <a href="/cv.html" class="mobile-link">CV</a>
+            <a href="/projects.html" class="mobile-link active">Projects</a>
+            <a href="/contact.html" class="mobile-link">Contact</a>
+        </div>
+        <div class="mobile-menu-footer">
+            <div class="social-links">
+                <a href="https://t.me/nicatabushov" target="_blank">
+                    <i class='bx bxl-telegram'></i>
+                </a>
+                <a href="https://github.com/nicatabushov" target="_blank">
+                    <i class='bx bxl-github'></i>
+                </a>
+                <a href="https://instagram.com/nicatabushov" target="_blank">
+                    <i class='bx bxl-instagram'></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
     <main class="projects-content">
         <div class="container">
-            <h1>My Projects</h1>
+            <h1 class="typing-text" data-text="My Projects">My Projects</h1>
             <div class="projects-grid">
                 <article class="project-card">
                     <div class="project-icon">🎓</div>
-                    <h2>İmtahanCE</h2>
+                    <h2 class="underline-animation">İmtahanCE</h2>
                     <p>An online school designed to help students prepare for exams. I'm working on creating a platform that makes learning more effective, accessible, and tailored to individual needs. The focus is on offering structured resources, interactive content, and personalized support to help students succeed.</p>
                     <div class="project-tags">
                         <span>Education</span>
@@ -39,44 +79,63 @@
 
                 <article class="project-card">
                     <div class="project-icon">🌐</div>
-                    <h2>Personal Website</h2>
-                    <p>This is my personal online space where I document my journey, share my experiences, and showcase my projects. It's not just a portfolio, but a space to reflect on my progress and share ideas with others.</p>
+                    <h2 class="underline-animation">Exam Score Calculator</h2>
+                    <p>A specialized calculator (<a href="https://abushov.vercel.app" target="_blank" class="underline-animation">abushov.vercel.app</a>) designed to help students calculate their exam scores quickly and accurately. Features an intuitive interface and supports various scoring methods.</p>
+                    <div class="project-tags">
+                        <span>Tool</span>
+                        <span>Calculator</span>
+                        <span>Education</span>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-icon">🌐</div>
+                    <h2 class="underline-animation">Personal Website</h2>
+                    <p>This website serves as my digital portfolio and personal space on the web. Built with modern web technologies, it showcases my projects, skills, and journey while maintaining a clean, user-friendly design with features like dark/light mode and responsive layout.</p>
                     <div class="project-tags">
                         <span>Web Development</span>
-                        <span>Design</span>
                         <span>Portfolio</span>
+                        <span>Design</span>
                     </div>
                 </article>
-
-                <article class="project-card">
-                    <div class="project-icon">🔒</div>
-                    <h2>Cybersecurity Studies</h2>
-                    <p>I am currently developing my expertise in cybersecurity. The goal is to understand and implement the best practices for securing digital data, protecting networks, and mitigating online threats. As part of this project, I'm building a strong foundation in both theory and practical skills.</p>
-                    <div class="project-tags">
-                        <span>Security</span>
-                        <span>Networks</span>
-                        <span>Research</span>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-icon">📈</div>
-                    <h2>Trading - Financial Market Exploration</h2>
-                    <p>As part of my ongoing exploration of finance, I'm focused on learning and applying trading strategies in various financial markets. This includes stock trading, cryptocurrency, and understanding the principles of both short-term and long-term investment.</p>
-                    <div class="project-tags">
-                        <span>Finance</span>
-                        <span>Trading</span>
-                        <span>Analysis</span>
-                    </div>
-                </article>
+            </div>
+            
+            <div class="contact-cta">
+                <h2 class="typing-text" data-text="Want to work together?">Want to work together?</h2>
+                <p>Let's create something amazing together!</p>
+                <a href="/contact.html" class="cta-button">Get in Touch</a>
             </div>
         </div>
     </main>
 
     <footer>
         <div class="container">
+            <div class="social-links">
+                <a href="https://t.me/nicatabushov" target="_blank" class="social-icon" title="Telegram">
+                    <i class='bx bxl-telegram'></i>
+                </a>
+                <a href="https://github.com/nicatabushov" target="_blank" class="social-icon" title="GitHub">
+                    <i class='bx bxl-github'></i>
+                </a>
+                <a href="https://instagram.com/nicatabushov" target="_blank" class="social-icon" title="Instagram">
+                    <i class='bx bxl-instagram'></i>
+                </a>
+                <a href="https://www.linkedin.com/in/nicatabushov" target="_blank" class="social-icon" title="LinkedIn">
+                    <i class='bx bxl-linkedin'></i>
+                </a>
+            </div>
             <p>© 2024 Nicat Abushov. Just a kid with a website.</p>
         </div>
     </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
 </body>
 </html> 
