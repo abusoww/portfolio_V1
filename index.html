@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nicat Abushov | Personal Website</title>
-    <link rel="stylesheet" href="/abushov.com/style.css"> 
+    <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+        // Force light theme by default
+        localStorage.setItem('darkTheme', 'false');
+    </script>
 </head>
-<body>
+<body class="light-theme">
     <div class="simple-background">
         <div class="color-layer layer-1"></div>
         <div class="color-layer layer-2"></div>
@@ -19,74 +23,75 @@
 
     <nav class="navbar">
         <div class="container">
-            <a href="/" class="logo">
+            <a href="index.html" class="logo">
                 <span class="logo-text">NA</span>
                 <div class="logo-dot"></div>
             </a>
             
-            <button class="mobile-menu-btn">
+            <button class="mobile-menu-btn" aria-label="Toggle mobile menu">
                 <i class='bx bx-menu'></i>
             </button>
 
             <ul class="nav-links">
-                <li><a href="/" class="nav-link underline-animation active">Main</a></li>
-                <li><a href="/cv.html" class="nav-link underline-animation">CV</a></li>
-                <li><a href="/projects.html" class="nav-link underline-animation">Projects</a></li>
-                <li><a href="/contact.html" class="nav-link underline-animation">Contact</a></li>
+                <li><a href="index.html" class="nav-link underline-animation active">Main</a></li>
+                <li><a href="cv.html" class="nav-link underline-animation">CV</a></li>
+                <li><a href="projects.html" class="nav-link underline-animation">Projects</a></li>
+                <li><a href="contact.html" class="nav-link underline-animation">Contact</a></li>
             </ul>
-            <div class="theme-switch" id="themeSwitch">
-                <div class="switch-handle"></div>
-            </div>
+            <button class="theme-switch" id="themeSwitch">
+                <i class='bx bx-sun'></i>
+                <i class='bx bx-moon'></i>
+            </button>
         </div>
     </nav>
 
-    <!-- Мобильное меню (вне .navbar) -->
+    <!-- Mobile menu -->
     <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <button class="mobile-menu-btn">
+                <i class='bx bx-x'></i>
+            </button>
+        </div>
         <div class="mobile-menu-links">
-            <a href="/" class="nav-link underline-animation active">Main</a>
-            <a href="/cv.html" class="nav-link underline-animation">CV</a>
-            <a href="/projects.html" class="nav-link underline-animation">Projects</a>
-            <a href="/contact.html" class="nav-link underline-animation">Contact</a>
+            <a href="index.html" class="nav-link underline-animation active">Main</a>
+            <a href="cv.html" class="nav-link underline-animation">CV</a>
+            <a href="projects.html" class="nav-link underline-animation">Projects</a>
+            <a href="contact.html" class="nav-link underline-animation">Contact</a>
         </div>
     </div>
 
     <main>
-        <section class="slide-section hero">
-            <div class="container">
-                <div class="hero-content">
-                    <div class="intro-wrapper">
-                        <div class="intro-text">
-                            <h1 class="typing-text" data-text="Hello!">Hello!</h1>
-                            <div class="intro-lines">
-                                <p class="intro-line typing-text-container">
-                                    <span class="text-gray typing-text" data-text="I am">I am</span>
-                                    <span class="name-text underline-animation typing-text" data-text="Nicat Abushov">Nicat Abushov</span>
-                                    <span class="text-gray typing-text" data-text=",">,</span>
-                                </p>
-                                <p class="intro-line typing-text-container">
-                                    <span class="text-gray typing-text" data-text="This is my personal space on the web">This is my personal space on the web</span>
-                                    <span class="text-gray typing-text" data-text=".">.</span>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="profile-image">
-                            <div class="temp-avatar">
-                                <i class='bx bx-user-circle'></i>
-                                <div class="avatar-glow"></div>
-                            </div>
+        <section class="hero">
+            <div class="hero-content">
+                <div class="intro-wrapper">
+                    <div class="intro-text">
+                        <h1>Hello!</h1>
+                        <div class="intro-lines">
+                            <p class="intro-line">
+                                <span class="text-grey">I'm </span><span class="text-purple">Nicat Abushov</span>
+                            </p>
+                            <p class="intro-line">
+                                <span class="text-grey">This is my personal space in web</span>
+                            </p>
                         </div>
                     </div>
-                    <div class="spacing-div"></div>
+
+                    <!-- Profile Image -->
+                    <div class="profile-image">
+                        <div class="temp-avatar">
+                            <img src="/assets/images/profile.gif" alt="Profile Animation">
+                            <div class="avatar-glow"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="slide-section hero-main" data-aos="fade-up">
-            <div class="container">
-                <div class="hero-main-content">
-                    <h2>I'm curious about everything—<br>tech, design, trading, and more.</h2>
-                    <p>Here, I keep things simple and share a little bit about myself.</p>
-                </div>
+        <!-- Hero Main Section -->
+        <section class="hero-main">
+            <div class="hero-main-content">
+                <h2>Building digital experiences with code and creativity</h2>
+                <p>Passionate about creating elegant solutions to complex problems</p>
             </div>
         </section>
 
@@ -105,15 +110,15 @@
                     <h3>Feel free to look around:</h3>
                     <ul>
                         <li>
-                            <a href="/cv.html" class="highlight-blue underline-animation">CV</a>
+                            <a href="./cv.html" class="highlight-blue underline-animation">CV</a>
                             <span class="link-description">– Learn more about me.</span>
                         </li>
                         <li>
-                            <a href="/projects.html" class="highlight-purple underline-animation">Projects</a>
+                            <a href="./projects.html" class="highlight-purple underline-animation">Projects</a>
                             <span class="link-description">– See what I've been working on.</span>
                         </li>
                         <li>
-                            <a href="/contact.html" class="highlight-green underline-animation">Contact</a>
+                            <a href="./contact.html" class="highlight-green underline-animation">Contact</a>
                             <span class="link-description">– Let's connect.</span>
                         </li>
                     </ul>
@@ -172,16 +177,35 @@
 
     <footer>
         <div class="container">
-            <p>© 2024 Nicat Abushov. Just a kid with a website.</p>
-            <div class="social-links">
-                <a href="#" class="social-icon"><i class='bx bxl-telegram'></i></a>
-                <a href="#" class="social-icon"><i class='bx bxl-github'></i></a>
-                <a href="#" class="social-icon"><i class='bx bxl-instagram'></i></a>
+            <div class="footer-content">
+                <div class="footer-left">
+                    <a href="/" class="footer-logo">
+                        <span class="logo-text">NA</span>
+                        <div class="logo-dot"></div>
+                    </a>
+                    <p class="footer-tagline">© 2024 Nicat Abushov. Just a kid with a website.</p>
+                </div>
+                <div class="footer-right">
+                    <div class="social-links">
+                        <a href="https://t.me/nicatabushov" target="_blank" class="social-icon" title="Telegram">
+                            <i class='bx bxl-telegram'></i>
+                        </a>
+                        <a href="https://github.com/nicatabushov" target="_blank" class="social-icon" title="GitHub">
+                            <i class='bx bxl-github'></i>
+                        </a>
+                        <a href="https://instagram.com/nicatabushov" target="_blank" class="social-icon" title="Instagram">
+                            <i class='bx bxl-instagram'></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/nicatabushov" target="_blank" class="social-icon" title="LinkedIn">
+                            <i class='bx bxl-linkedin'></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
 
-    <script src="/abushov.com/main.js"></script>
+    <script src="js/main.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
