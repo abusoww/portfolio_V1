@@ -1,0 +1,77 @@
+/* Reset any existing cursor styles */
+.cursor,
+.cursor-dot,
+.cursor-outline,
+.cursor-trailer,
+.cursor-particle,
+.nature-cursor,
+.tracker-cursor,
+.cursor-core,
+.leaf,
+.flower,
+.ripple,
+.season-aura {
+    display: none !important;
+}
+
+/* Figma-style cursor */
+.figma-cursor {
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2147483647;
+    width: 0;
+    height: 0;
+}
+
+/* Ring */
+.figma-cursor-ring {
+    width: 40px;
+    height: 40px;
+    border: 1.5px solid rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    will-change: transform;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+    .figma-cursor-ring {
+        border-color: rgba(255, 255, 255, 1);
+    }
+}
+
+/* Manual dark theme class */
+.dark-theme .figma-cursor-ring,
+[data-theme="dark"] .figma-cursor-ring {
+    border-color: rgba(255, 255, 255, 1);
+}
+
+/* Hide default cursor */
+*, 
+*::before, 
+*::after {
+    cursor: default !important;
+}
+
+/* Hover state - much larger but same color */
+.figma-cursor.clickable .figma-cursor-ring {
+    width: 120px;
+    height: 120px;
+    border-width: 1.5px;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Mobile fallback */
+@media (max-width: 768px) {
+    .figma-cursor {
+        display: none;
+    }
+    * {
+        cursor: auto !important;
+    }
+} 
