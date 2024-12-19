@@ -48,7 +48,7 @@
 /* Manual dark theme class */
 .dark-theme .figma-cursor-ring,
 [data-theme="dark"] .figma-cursor-ring {
-    border-color: rgba(255, 255, 255, 1);
+    border-color: rgba(199, 79, 84, 1);
 }
 
 /* Hide default cursor */
