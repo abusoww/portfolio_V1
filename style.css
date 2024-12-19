@@ -3,7 +3,7 @@
     --primary: #18181B;
     --secondary: #52525B;
     --accent: #4F46E5;
-    --background: #FFFFFF;
+    --background: #FFFEF7;
     --surface: #F4F4F5;
     --text: #18181B;
     --gradient: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
@@ -52,11 +52,19 @@ body.dark-theme {
     display: block;
 }
 
-[data-theme="light"] .theme-switch .bx-sun {
+body.dark-theme .theme-switch .bx-sun {
     display: block;
 }
 
-[data-theme="light"] .theme-switch .bx-moon {
+body.dark-theme .theme-switch .bx-moon {
+    display: none;
+}
+
+body:not(.dark-theme) .theme-switch .bx-moon {
+    display: block;
+}
+
+body:not(.dark-theme) .theme-switch .bx-sun {
     display: none;
 }
 
@@ -160,8 +168,8 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(12px);
+    background: rgba(255, 254, 247, 0.692);
+    backdrop-filter: blur(7px);
     z-index: 1000;
     padding: 1rem 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -169,7 +177,7 @@ body {
 
 /* Dark theme navbar */
 body.dark-theme .navbar {
-    background: rgba(9, 9, 11, 0.8);
+    background: rgba(44, 45, 45, 0.8);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -177,6 +185,7 @@ body.dark-theme .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 20px;
 }
 
 .logo {
@@ -184,6 +193,7 @@ body.dark-theme .navbar {
     align-items: center;
     text-decoration: none;
     gap: 0.5rem;
+    padding: 0.5rem 0;
 }
 
 .logo-text {
@@ -540,26 +550,14 @@ body.dark-theme .social-icon {
 
 /* About Section */
 .about-section {
-    padding: 30px 0;
-    margin: 0;
+    padding: 60px 0;
     background: var(--surface);
-}
-
-.about-section h2 {
-    font-size: 3rem;
-    color: var(--primary);
-    text-align: center;
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto 3rem auto;
 }
 
 .about-content {
     max-width: 800px;
     margin: 0 auto;
-    width: 100%;
-    position: relative;
-    padding-top: 40px;
+    padding: 0 20px;
 }
 
 .about-content p {
@@ -796,12 +794,21 @@ body.dark-theme .social-icon {
     transition: 0.3s ease;
     opacity: 0;
     visibility: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .mobile-menu.active {
     right: 0;
     opacity: 1;
     visibility: visible;
+}
+
+.mobile-menu-header {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
 }
 
 .mobile-menu-links {
@@ -814,22 +821,20 @@ body.dark-theme .social-icon {
 }
 
 .mobile-menu-links a {
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: var(--primary);
     text-decoration: none;
     font-weight: 500;
     transition: var(--transition);
-    opacity: 0.8;
 }
 
 .mobile-menu-links a:hover {
-    opacity: 1;
+    color: var(--accent);
     transform: translateY(-2px);
 }
 
 .mobile-menu-links a.active {
     color: var(--accent);
-    opacity: 1;
 }
 
 /* Show mobile menu when active */
@@ -838,7 +843,7 @@ body.dark-theme .social-icon {
     display: flex;
 }
 
-/* Дополнительные стили */
+/* Дополнительные тили */
 @media (max-width: 968px) {
     .mobile-menu-btn {
         display: block;
@@ -961,7 +966,7 @@ body.dark-theme .social-icon {
     }
 }
 
-/* ачальне сосояние для анимируемых элементов */
+/* ����чальне сосояние для анимируемых элементов */
 .hero-content,
 .work-item,
 .goal-card {
@@ -969,7 +974,7 @@ body.dark-theme .social-icon {
     transform: none;
 }
 
-/* Обновляем стили для последней секции */
+/* ��бновляем стили для последней секции */
 .goals-section {
     background: var(--surface);
     padding: 60px 0;
@@ -1091,7 +1096,7 @@ section:hover .section-glow {
     opacity: 1;
 }
 
-/* Добавляем простой отступ через пустой div */
+/* Добвляем простой отступ через пустой div */
 .spacing-div {
     display: none;
 }
@@ -1281,7 +1286,7 @@ h1 {
     text-align: left;
 }
 
-/* Серый текст для темной темы */
+/* Сеый текст для темной темы */
 .text-gray {
     color: #7D7D7D;  /* Новый цвет для темной темы */
     font-weight: 500;
@@ -1328,48 +1333,89 @@ h1 {
         display: flex;
         flex-direction: column;
         gap: 2rem;
+        padding-left: 1.5rem; /* Add left padding for all content */
     }
 
+    /* Move profile image to very top */
     .profile-image {
-        order: 1;
-        margin: 0 auto;
-        width: 220px;
-        height: 220px;
+        order: -1;
+        width: 180px;
+        height: 180px;
+        margin: 2rem auto 3rem auto; /* Center horizontally with top and bottom margins */
+        display: block; /* Ensure proper centering */
     }
 
-    .intro-text {
-        order: 2;
-        text-align: center;
+    /* Left align all text */
+    .hero-intro {
+        text-align: left;
+        width: 100%;
     }
 
-    .hero-main {
-        order: 3;
+    .hero-intro h1 {
+        text-align: left;
+        font-size: 5rem;
+        margin-bottom: 1rem;
+    }
+
+    .intro-lines {
+        text-align: left;
+    }
+
+    .intro-line {
+        text-align: left;
+        justify-content: flex-start;
+        font-size: 2.2rem;
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    /* Ensure typing element aligns properly */
+    .typing-element {
+        display: inline;
+    }
+
+    /* Remove any center alignments */
+    .intro-line, 
+    .intro-lines,
+    .hero-content {
+        display: block;
+        justify-content: unset;
+        align-items: unset;
+        text-align: left;
+    }
+
+    /* Adjust container padding */
+    .hero-content {
+        padding: 0;
+    }
+
+    .container {
+        padding: 0;
+    }
+}
+
+/* Smaller screens */
+@media (max-width: 480px) {
+    .profile-image {
+        width: 150px;
+        height: 150px;
+        margin: 2rem auto 2.5rem auto;
     }
 
     .hero-content {
-        display: flex;
-        flex-direction: column;
+        padding-left: 1.5rem; /* Slightly less padding on very small screens */
     }
 
-    .intro-text h1 {
-        font-size: 72px;
+    .hero-intro h1 {
+        font-size: 4rem;
     }
-    
+
     .intro-line {
-        font-size: 24px;
-        gap: 8px;
+        font-size: 1.8rem;
     }
 }
 
-/* Дополнительые стили для малеьких экранов */
-@media (max-width: 480px) {
-    .profile-image {
-        width: 180px;
-        height: 180px;
-    }
-}
-
-/* Общий стиль для анимированного подчеркивания */
+/* Общий стиль для анимированного подчерквания */
 .underline-animation {
     position: relative;
 }
@@ -1660,7 +1706,7 @@ h1 {
 
 /* Стили для светлой темы */
 [data-theme="light"] .text-gray {
-    color: rgba(0, 0, 0, 0.7);  /* Делаем текст темнее и контрастнее */
+    color: rgba(0, 0, 0, 0.7);  /* Делаем текст ене и контрастнее */
 }
 
 [data-theme="light"] .name-text {
@@ -1988,5 +2034,389 @@ h1 {
     
     .typing-text.typing::after {
         height: 0.8em;
+    }
+}
+
+/* Typing animation styles */
+.typing-element {
+    display: inline-block;
+}
+
+.typing-element .txt {
+    background: linear-gradient(45deg, #2563eb, #22c55e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.4rem;
+    font-weight: 600;
+    padding-right: 4px; /* Add space for cursor */
+}
+
+/* Different gradients for each word */
+.typing-element[data-current="Nicat Abushov"] .txt {
+    background: linear-gradient(45deg, #4F46E5, #7C3AED);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.typing-element[data-current="a Developer"] .txt {
+    background: linear-gradient(45deg, #3B82F6, #10B981);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.typing-element[data-current="a Designer"] .txt {
+    background: linear-gradient(45deg, #EC4899, #F59E0B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Cursor animation */
+.typing-element .txt::after {
+    content: '|';
+    margin-left: 2px;
+    opacity: 1;
+    animation: blink 0.7s infinite;
+    -webkit-text-fill-color: currentColor;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .typing-element .txt {
+        font-size: 2.6rem;
+    }
+}
+
+/* Intro animations */
+@keyframes slideUpFade {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes gradientSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+        background-position: 0% 50%;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        background-position: 100% 50%;
+    }
+}
+
+/* Hello! animation */
+.hero-intro h1 {
+    background: linear-gradient(120deg, #4F46E5, #7C3AED);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 200% auto;
+    opacity: 0;
+    animation: gradientSlide 0.8s ease-out forwards;
+}
+
+/* I'm text animation */
+.intro-line:first-child {
+    opacity: 0;
+    animation: slideUpFade 0.8s ease-out forwards;
+    animation-delay: 0.4s;
+}
+
+/* This is my personal space in web animation */
+.intro-line:last-child {
+    opacity: 0;
+    animation: slideUpFade 0.8s ease-out forwards;
+    animation-delay: 0.8s;
+}
+
+/* Typing element styles */
+.typing-element {
+    opacity: 0;
+    animation: slideUpFade 0.8s ease-out forwards;
+    animation-delay: 0.6s;
+}
+
+.typing-element .txt {
+    background: linear-gradient(45deg, #2563eb, #22c55e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.4rem;
+    font-weight: 600;
+}
+
+/* Profile image animation */
+.profile-image {
+    opacity: 0;
+    animation: profileFade 1s ease-out forwards;
+    animation-delay: 1s;
+}
+
+@keyframes profileFade {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Gradient animations for typed text */
+.typing-element[data-current="Nicat Abushov"] .txt {
+    background: linear-gradient(45deg, #4F46E5, #7C3AED);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.typing-element[data-current="a Developer"] .txt {
+    background: linear-gradient(45deg, #3B82F6, #10B981);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.typing-element[data-current="a Designer"] .txt {
+    background: linear-gradient(45deg, #EC4899, #F59E0B);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Cursor animation */
+.typing-element .txt::after {
+    content: '|';
+    margin-left: 2px;
+    opacity: 1;
+    animation: blink 0.7s infinite;
+    -webkit-text-fill-color: currentColor;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .intro-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Center profile image */
+    .profile-image {
+        order: -1;
+        width: 180px;
+        height: 180px;
+        margin: 2rem auto 3rem auto;
+        display: block;
+    }
+
+    /* Text container */
+    .hero-content {
+        padding: 0 2rem; /* Add consistent padding */
+    }
+
+    /* Force all text to left align */
+    .hero-intro {
+        text-align: left !important;
+        display: block;
+    }
+
+    .hero-intro h1 {
+        text-align: left !important;
+        font-size: 5rem;
+        margin-bottom: 1rem;
+        display: block;
+    }
+
+    .intro-lines {
+        text-align: left !important;
+        display: block;
+    }
+
+    .intro-line {
+        text-align: left !important;
+        display: block !important;
+        justify-content: flex-start !important;
+        font-size: 2.2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Remove any flex or center alignments */
+    .intro-line, 
+    .intro-lines,
+    .hero-content {
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        flex-direction: column;
+    }
+
+    /* Ensure typing element aligns properly */
+    .typing-element {
+        display: inline;
+        text-align: left !important;
+    }
+}
+
+/* Smaller screens */
+@media (max-width: 480px) {
+    .hero-content {
+        padding: 0 1.5rem;
+    }
+
+    .hero-intro h1 {
+        font-size: 4rem;
+    }
+
+    .intro-line {
+        font-size: 1.8rem;
+    }
+}
+
+/* Mobile Menu Styles */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background: var(--background);
+    z-index: 1000;
+    transition: 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-menu.active {
+    right: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Add styles for the menu close button */
+.mobile-menu .mobile-menu-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+    background: none;
+    border: none;
+    color: var(--primary);
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+/* Section Headings */
+.about-section h2,
+.goals-section h2 {
+    font-size: 3.5rem;
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 3rem;
+    font-weight: 700;
+    position: relative;
+}
+
+/* Add a subtle gradient underline effect */
+.about-section h2::after,
+.goals-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: var(--gradient);
+    border-radius: 2px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .about-section h2,
+    .goals-section h2 {
+        font-size: 2.8rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .about-section h2::after,
+    .goals-section h2::after {
+        width: 50px;
+        height: 3px;
+        bottom: -8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-section h2,
+    .goals-section h2 {
+        font-size: 2.4rem;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Coming Soon Page */
+.coming-soon-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.coming-soon-page h1 {
+    font-size: 6rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-align: center;
+    position: relative;
+    margin: 0;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .coming-soon-page h1 {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .coming-soon-page h1 {
+        font-size: 3rem;
     }
 }
