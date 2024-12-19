@@ -229,4 +229,25 @@
     .contact-cta p {
         font-size: 1rem;
     }
+}
+
+/* Add to projects.css */
+.typing-heading {
+    position: relative;
+    display: inline-block;
+}
+
+.typing-heading::after {
+    content: '|';
+    position: absolute;
+    right: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--accent);
+    animation: cursor-blink 0.8s infinite;
+}
+
+@keyframes cursor-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 } 
