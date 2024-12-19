@@ -4,12 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nicat Abushov | CV</title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="js/main.js"></script>
+    <script>
+        // Set default theme immediately
+        if (!localStorage.getItem('darkTheme')) {
+            localStorage.setItem('darkTheme', 'false');
+        }
+    </script>
 </head>
-<body>
+<body class="light-theme">
     <div class="simple-background">
         <div class="color-layer layer-1"></div>
         <div class="color-layer layer-2"></div>
@@ -18,33 +25,39 @@
 
     <nav class="navbar">
         <div class="container">
-            <a href="/" class="logo">
+            <a href="index.html" class="logo">
                 <span class="logo-text">NA</span>
                 <div class="logo-dot"></div>
             </a>
             
-            <button class="mobile-menu-btn">
+            <button class="mobile-menu-btn" aria-label="Toggle mobile menu">
                 <i class='bx bx-menu'></i>
             </button>
 
             <ul class="nav-links">
-                <li><a href="/">Main</a></li>
-                <li><a href="/cv.html" class="active">CV</a></li>
-                <li><a href="/projects.html">Projects</a></li>
-                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="index.html" class="nav-link underline-animation">Main</a></li>
+                <li><a href="cv.html" class="nav-link underline-animation active">CV</a></li>
+                <li><a href="projects.html" class="nav-link underline-animation">Projects</a></li>
+                <li><a href="contact.html" class="nav-link underline-animation">Contact</a></li>
             </ul>
-            <div class="theme-switch" id="themeSwitch">
-                <div class="switch-handle"></div>
-            </div>
+            <button class="theme-switch" id="themeSwitch">
+                <i class='bx bx-sun'></i>
+                <i class='bx bx-moon'></i>
+            </button>
         </div>
     </nav>
 
     <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <button class="mobile-menu-btn">
+                <i class='bx bx-x'></i>
+            </button>
+        </div>
         <div class="mobile-menu-links">
-            <a href="/">Main</a>
-            <a href="/cv.html" class="active">CV</a>
-            <a href="/projects.html">Projects</a>
-            <a href="/contact.html">Contact</a>
+            <a href="index.html" class="nav-link underline-animation">Main</a>
+            <a href="cv.html" class="nav-link underline-animation active">CV</a>
+            <a href="projects.html" class="nav-link underline-animation">Projects</a>
+            <a href="contact.html" class="nav-link underline-animation">Contact</a>
         </div>
     </div>
 
@@ -56,17 +69,26 @@
 
     <footer>
         <div class="container">
-            <p>© 2024 Nicat Abushov. Just a kid with a website.</p>
             <div class="social-links">
-                <a href="#" class="social-icon"><i class='bx bxl-telegram'></i></a>
-                <a href="#" class="social-icon"><i class='bx bxl-github'></i></a>
-                <a href="#" class="social-icon"><i class='bx bxl-instagram'></i></a>
+                <a href="https://t.me/nicatabushov" target="_blank" class="social-icon" title="Telegram">
+                    <i class='bx bxl-telegram'></i>
+                </a>
+                <a href="https://github.com/nicatabushov" target="_blank" class="social-icon" title="GitHub">
+                    <i class='bx bxl-github'></i>
+                </a>
+                <a href="https://instagram.com/nicatabushov" target="_blank" class="social-icon" title="Instagram">
+                    <i class='bx bxl-instagram'></i>
+                </a>
+                <a href="https://www.linkedin.com/in/nicatabushov" target="_blank" class="social-icon" title="LinkedIn">
+                    <i class='bx bxl-linkedin'></i>
+                </a>
             </div>
+            <p>© 2024 Nicat Abushov. Just a kid with a website.</p>
         </div>
     </footer>
 
+    <script src="js/main.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="/main.js"></script>
     <script>
         AOS.init({
             duration: 800,
