@@ -1,51 +1,59 @@
 .projects-content {
-    padding: 80px 0 40px;
+    padding: 160px 20px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .projects-content h1 {
     text-align: center;
-    font-size: 36px;
-    margin-bottom: 30px;
-    color: var(--primary-color);
+    font-size: 3rem;
+    margin: 1rem 0 3rem;
+    color: var(--primary);
+    font-weight: 700;
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    margin-bottom: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .project-card {
     background: var(--surface);
-    padding: 2rem;
+    padding: 2.5rem;
     border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: var(--transition);
-    position: relative;
-    overflow: hidden;
+    transition: all 0.3s ease;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .project-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
 }
 
 .project-card h2 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     margin-bottom: 1rem;
     color: var(--primary);
+    font-weight: 600;
 }
 
 .project-card p {
     color: var(--secondary);
-    margin-bottom: 1rem;
-    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    font-size: 1.1rem;
 }
 
 .project-card a {
@@ -62,7 +70,7 @@
 .project-tags span {
     background: rgba(99, 102, 241, 0.1);
     color: var(--accent);
-    padding: 0.4rem 1rem;
+    padding: 0.5rem 1.2rem;
     border-radius: 20px;
     font-size: 0.9rem;
     transition: var(--transition);
@@ -87,22 +95,60 @@
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
+    .projects-content {
+        padding: 140px 16px 40px;
+    }
+
+    .projects-content h1 {
+        font-size: 2.5rem;
+        margin: 0 0 2.5rem;
+        padding: 0;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
     .project-card {
         padding: 2rem;
     }
 
     .project-card h2 {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
 
     .project-icon {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 }
 
 @media (max-width: 480px) {
+    .projects-content {
+        padding: 120px 12px 30px;
+    }
+
+    .projects-content h1 {
+        font-size: 2rem;
+        margin: 0 0 2rem;
+    }
+
+    .projects-grid {
+        padding: 0 1rem;
+        gap: 1.2rem;
+    }
+
     .project-card {
         padding: 1.5rem;
+    }
+
+    .project-card h2 {
+        font-size: 1.6rem;
+    }
+
+    .project-card p {
+        font-size: 1rem;
+        line-height: 1.6;
     }
 
     .project-tags {
@@ -110,93 +156,77 @@
     }
 
     .project-tags span {
-        padding: 0.3rem 0.8rem;
-        font-size: 0.8rem;
+        padding: 0.4rem 1rem;
+        font-size: 0.85rem;
     }
 }
 
-/* Contact CTA Section - Improved */
+/* Contact CTA Section - Minimalistic */
 .contact-cta {
     text-align: center;
-    padding: 2rem;
-    margin-top: 2rem;
-    background: rgba(99, 102, 241, 0.05);
-    border-radius: 16px;
-    border: 1px solid rgba(99, 102, 241, 0.1);
-    backdrop-filter: blur(10px);
+    padding: 6rem 2rem;
+    margin-top: 6rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .contact-cta h2 {
-    font-size: 2.2rem;
-    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
     color: var(--primary);
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .contact-cta p {
     color: var(--secondary);
     font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-bottom: 2.5rem;
 }
 
 .cta-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: var(--gradient);
-    color: white;
-    padding: 0.8rem 1.8rem;
-    border-radius: 12px;
-    text-decoration: none;
+    display: inline-block;
+    color: var(--accent);
+    font-size: 1.1rem;
     font-weight: 500;
-    transition: var(--transition);
-    border: none;
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+    text-decoration: none;
+    padding: 0.8rem 2rem;
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    transition: all 0.3s ease;
 }
 
 .cta-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.3);
+    background: var(--accent);
+    color: white;
 }
 
 /* Light mode adjustments */
 [data-theme="light"] .contact-cta {
-    background: rgba(79, 70, 229, 0.05);
-    border-color: rgba(79, 70, 229, 0.1);
+    border-top-color: rgba(0, 0, 0, 0.1);
 }
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
-    .projects-content {
-        padding: 60px 0 30px;
-    }
-
     .contact-cta {
-        padding: 2rem 0 1rem;
+        padding: 4rem 1.5rem;
+        margin-top: 4rem;
     }
 
     .contact-cta h2 {
         font-size: 2rem;
     }
-
-    .contact-cta p {
-        font-size: 1.1rem;
-    }
 }
 
 @media (max-width: 480px) {
+    .contact-cta {
+        padding: 3rem 1rem;
+        margin-top: 3rem;
+    }
+
     .contact-cta h2 {
         font-size: 1.8rem;
     }
 
     .contact-cta p {
         font-size: 1rem;
-    }
-
-    .cta-button {
-        padding: 0.8rem 1.5rem;
     }
 } 
