@@ -1,97 +1,105 @@
 // Theme Switch
 function initThemeSwitch() {
     const themeSwitch = document.getElementById('themeSwitch');
+    const body = document.body;
     
-    // Set initial theme
-    function setTheme(theme) {
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
+    if (!themeSwitch) {
+        console.error('Theme switch button not found');
+        return;
+    }
+    
+    // Force light theme on initial load
+    body.classList.remove('dark-theme');
+    body.classList.add('light-theme');
+    
+    // Function to set theme
+    function setTheme(isDark) {
+        console.log('Setting theme:', isDark ? 'dark' : 'light');
+        if (isDark) {
+            body.classList.add('dark-theme');
+            body.classList.remove('light-theme');
+        } else {
+            body.classList.add('light-theme');
+            body.classList.remove('dark-theme');
+        }
+        try {
+            localStorage.setItem('darkTheme', isDark);
+        } catch (e) {
+            console.log('Could not save theme preference');
+        }
     }
 
-    // Get saved theme or use system preference
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-    
-    if (savedTheme) {
-        setTheme(savedTheme);
-    } else if (prefersDarkScheme.matches) {
-        setTheme('dark');
-    } else {
-        setTheme('light');
+    // Function to load saved theme
+    function loadSavedTheme() {
+        try {
+            const savedTheme = localStorage.getItem('darkTheme');
+            // Only apply dark theme if explicitly saved as true
+            if (savedTheme === 'true') {
+                setTheme(true);
+            }
+        } catch (e) {
+            // If localStorage fails, stay in light theme
+            setTheme(false);
+        }
     }
 
-    // Theme switch click handler
-    if (themeSwitch) {
-        themeSwitch.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            setTheme(newTheme);
-        });
-    }
+    // Load saved theme after forcing light theme
+    loadSavedTheme();
+
+    // Theme switch event listener
+    themeSwitch.onclick = (e) => {
+        e.preventDefault();
+        const isDark = !body.classList.contains('dark-theme');
+        setTheme(isDark);
+    };
 }
 
 // Mobile Menu
 function initMobileMenu() {
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const openBtn = document.querySelector('.navbar .mobile-menu-btn');
+    const closeBtn = document.querySelector('.mobile-menu .mobile-menu-btn');
     const mobileMenu = document.querySelector('.mobile-menu');
-    const mobileMenuClose = document.querySelector('.mobile-menu-close');
 
-    if (mobileMenuBtn && mobileMenu) {
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.add('active');
-        });
-    }
+    // Open menu
+    openBtn.addEventListener('click', () => {
+        mobileMenu.classList.add('active');
+    });
 
-    if (mobileMenuClose && mobileMenu) {
-        mobileMenuClose.addEventListener('click', () => {
-            mobileMenu.classList.remove('active');
-        });
+    // Close menu
+    closeBtn.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+    });
+}
+
+// Import profile image configuration
+import profileImage from './profileImage.js';
+
+// Profile Image Handler
+function initProfileImage() {
+    const profileContainer = document.querySelector('.profile-image');
+    const avatar = document.querySelector('.temp-avatar');
+    
+    if (!profileContainer || !avatar) return;
+
+    if (profileImage.image.enabled) {
+        // Use image
+        avatar.innerHTML = `
+            <img 
+                src="${profileImage.image.src}" 
+                alt="${profileImage.image.alt}"
+                onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'bx ${profileImage.fallbackIcon.class}\'></i>'"
+            >
+        `;
+    } else {
+        // Use icon
+        avatar.innerHTML = `<i class='bx ${profileImage.fallbackIcon.class}'></i>`;
     }
 }
 
-// Typing Effect
-function typeText(element, callback) {
-    const text = element.getAttribute('data-text');
-    element.style.visibility = 'visible';
-    element.textContent = '';
-    element.classList.add('typing');
-
-    let charIndex = 0;
-    const typingSpeed = 50;
-
-    function type() {
-        if (charIndex < text.length) {
-            element.textContent += text.charAt(charIndex);
-            charIndex++;
-            setTimeout(type, typingSpeed);
-        } else {
-            element.classList.remove('typing');
-            element.classList.add('typed');
-            if (callback) callback();
-        }
-    }
-
-    type();
-}
-
-function initTypewriterEffect() {
-    const elements = document.querySelectorAll('.typing-text');
-    const elementsArray = Array.from(elements);
-
-    function typeNext(index) {
-        if (index < elementsArray.length) {
-            typeText(elementsArray[index], () => {
-                setTimeout(() => typeNext(index + 1), 200);
-            });
-        }
-    }
-
-    typeNext(0);
-}
-
-// Initialize everything when DOM is loaded
+// Initialize everything
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM Content Loaded - Initializing');
     initThemeSwitch();
     initMobileMenu();
-    initTypewriterEffect();
+    initProfileImage();
 });
