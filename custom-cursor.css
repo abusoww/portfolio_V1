@@ -41,7 +41,7 @@
 /* Dark theme */
 @media (prefers-color-scheme: dark) {
     .figma-cursor-ring {
-        border-color: rgba(255, 255, 255, 1);
+        border-color: rgba(199, 79, 84, 1);
     }
 }
 
