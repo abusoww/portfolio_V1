@@ -29,10 +29,10 @@
             </button>
 
             <ul class="nav-links">
-                <li><a href="/" class="active">Main</a></li>
-                <li><a href="/cv.html">CV</a></li>
-                <li><a href="/projects.html">Projects</a></li>
-                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="/" class="nav-link underline-animation active">Main</a></li>
+                <li><a href="/cv.html" class="nav-link underline-animation">CV</a></li>
+                <li><a href="/projects.html" class="nav-link underline-animation">Projects</a></li>
+                <li><a href="/contact.html" class="nav-link underline-animation">Contact</a></li>
             </ul>
             <div class="theme-switch" id="themeSwitch">
                 <div class="switch-handle"></div>
@@ -43,10 +43,10 @@
     <!-- Мобильное меню (вне .navbar) -->
     <div class="mobile-menu">
         <div class="mobile-menu-links">
-            <a href="/" class="active">Main</a>
-            <a href="/cv.html">CV</a>
-            <a href="/projects.html">Projects</a>
-            <a href="/contact.html">Contact</a>
+            <a href="/" class="nav-link underline-animation active">Main</a>
+            <a href="/cv.html" class="nav-link underline-animation">CV</a>
+            <a href="/projects.html" class="nav-link underline-animation">Projects</a>
+            <a href="/contact.html" class="nav-link underline-animation">Contact</a>
         </div>
     </div>
 
@@ -56,14 +56,17 @@
                 <div class="hero-content">
                     <div class="intro-wrapper">
                         <div class="intro-text">
-                            <h1>Hello!</h1>
+                            <h1 class="typing-text" data-text="Hello!">Hello!</h1>
                             <div class="intro-lines">
-                                <p class="intro-line">
-                                    <span class="text-gray">I am</span>
-                                    <span class="name-text">Nicat Abushov</span>
-                                    <span class="text-gray">,</span>
+                                <p class="intro-line typing-text-container">
+                                    <span class="text-gray typing-text" data-text="I am">I am</span>
+                                    <span class="name-text underline-animation typing-text" data-text="Nicat Abushov">Nicat Abushov</span>
+                                    <span class="text-gray typing-text" data-text=",">,</span>
                                 </p>
-                                <p class="intro-line"><span class="text-gray">This is my personal space on the web</span><span class="text-gray">.</span></p>
+                                <p class="intro-line typing-text-container">
+                                    <span class="text-gray typing-text" data-text="This is my personal space on the web">This is my personal space on the web</span>
+                                    <span class="text-gray typing-text" data-text=".">.</span>
+                                </p>
                             </div>
                         </div>
                         <div class="profile-image">
@@ -102,15 +105,15 @@
                     <h3>Feel free to look around:</h3>
                     <ul>
                         <li>
-                            <a href="/cv.html" class="highlight-blue">CV</a>
+                            <a href="/cv.html" class="highlight-blue underline-animation">CV</a>
                             <span class="link-description">– Learn more about me.</span>
                         </li>
                         <li>
-                            <a href="/projects.html" class="highlight-purple">Projects</a>
+                            <a href="/projects.html" class="highlight-purple underline-animation">Projects</a>
                             <span class="link-description">– See what I've been working on.</span>
                         </li>
                         <li>
-                            <a href="/contact.html" class="highlight-green">Contact</a>
+                            <a href="/contact.html" class="highlight-green underline-animation">Contact</a>
                             <span class="link-description">– Let's connect.</span>
                         </li>
                     </ul>
