@@ -1,105 +1,161 @@
-// Theme Switch
-function initThemeSwitch() {
-    const themeSwitch = document.getElementById('themeSwitch');
-    const body = document.body;
-    
-    if (!themeSwitch) {
-        console.error('Theme switch button not found');
-        return;
-    }
-    
-    // Force light theme on initial load
-    body.classList.remove('dark-theme');
-    body.classList.add('light-theme');
-    
-    // Function to set theme
-    function setTheme(isDark) {
-        console.log('Setting theme:', isDark ? 'dark' : 'light');
-        if (isDark) {
-            body.classList.add('dark-theme');
-            body.classList.remove('light-theme');
-        } else {
-            body.classList.add('light-theme');
-            body.classList.remove('dark-theme');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Nicat Abushov</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <script>
+        // Set default theme immediately
+        if (!localStorage.getItem('darkTheme')) {
+            localStorage.setItem('darkTheme', 'false');
         }
-        try {
-            localStorage.setItem('darkTheme', isDark);
-        } catch (e) {
-            console.log('Could not save theme preference');
-        }
-    }
+    </script>
+</head>
+<body class="light-theme">
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">
+                <span class="logo-text">NA</span>
+                <div class="logo-dot"></div>
+            </a>
+            
+            <button class="mobile-menu-btn">
+                <i class='bx bx-menu'></i>
+            </button>
 
-    // Function to load saved theme
-    function loadSavedTheme() {
-        try {
-            const savedTheme = localStorage.getItem('darkTheme');
-            // Only apply dark theme if explicitly saved as true
-            if (savedTheme === 'true') {
-                setTheme(true);
-            }
-        } catch (e) {
-            // If localStorage fails, stay in light theme
-            setTheme(false);
-        }
-    }
+            <ul class="nav-links">
+                <li><a href="/">Main</a></li>
+                <li><a href="/cv.html">CV</a></li>
+                <li><a href="/projects.html">Projects</a></li>
+                <li><a href="/contact.html" class="active">Contact</a></li>
+            </ul>
+            <button class="theme-switch" id="themeSwitch">
+                <i class='bx bx-sun'></i>
+                <i class='bx bx-moon'></i>
+            </button>
+        </div>
+    </nav>
 
-    // Load saved theme after forcing light theme
-    loadSavedTheme();
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <button class="mobile-menu-btn">
+                <i class='bx bx-x'></i>
+            </button>
+        </div>
+        <div class="mobile-menu-links">
+            <a href="index.html" class="nav-link underline-animation">Main</a>
+            <a href="cv.html" class="nav-link underline-animation">CV</a>
+            <a href="projects.html" class="nav-link underline-animation">Projects</a>
+            <a href="contact.html" class="nav-link underline-animation active">Contact</a>
+        </div>
+    </div>
 
-    // Theme switch event listener
-    themeSwitch.onclick = (e) => {
-        e.preventDefault();
-        const isDark = !body.classList.contains('dark-theme');
-        setTheme(isDark);
-    };
-}
+    <main class="contact-content">
+        <div class="contact-section">
+            <h1 class="typing-heading" data-text="My Contacts">My Contacts</h1>
+            <p class="typing-text" data-text="Got a question or want to work together? Feel free to reach out.">
+                Got a question or want to work together? Feel free to reach out.
+            </p>
+            
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class='bx bx-envelope'></i>
+                    </div>
+                    <div class="contact-details">
+                        <h2>Email</h2>
+                        <a href="mailto:your.email@example.com">your.email@example.com</a>
+                    </div>
+                </div>
 
-// Mobile Menu
-function initMobileMenu() {
-    const openBtn = document.querySelector('.navbar .mobile-menu-btn');
-    const closeBtn = document.querySelector('.mobile-menu .mobile-menu-btn');
-    const mobileMenu = document.querySelector('.mobile-menu');
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class='bx bxl-telegram'></i>
+                    </div>
+                    <div class="contact-details">
+                        <h2>Telegram</h2>
+                        <a href="https://t.me/nicatabushov">@nicatabushov</a>
+                    </div>
+                </div>
 
-    // Open menu
-    openBtn.addEventListener('click', () => {
-        mobileMenu.classList.add('active');
-    });
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class='bx bxl-linkedin'></i>
+                    </div>
+                    <div class="contact-details">
+                        <h2>LinkedIn</h2>
+                        <a href="https://linkedin.com/in/nicatabushov">Nicat Abushov</a>
+                    </div>
+                </div>
 
-    // Close menu
-    closeBtn.addEventListener('click', () => {
-        mobileMenu.classList.remove('active');
-    });
-}
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class='bx bxl-github'></i>
+                    </div>
+                    <div class="contact-details">
+                        <h2>Github</h2>
+                        <a href="https://github.com/nicatabushov">@nicatabushov</a>
+                    </div>
+                </div>
 
-// Import profile image configuration
-import profileImage from './profileImage.js';
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class='bx bxl-instagram'></i>
+                    </div>
+                    <div class="contact-details">
+                        <h2>Instagram</h2>
+                        <a href="https://instagram.com/nicatabushov">@nicatabushov</a>
+                    </div>
+                </div>
 
-// Profile Image Handler
-function initProfileImage() {
-    const profileContainer = document.querySelector('.profile-image');
-    const avatar = document.querySelector('.temp-avatar');
-    
-    if (!profileContainer || !avatar) return;
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class='bx bx-code-block'></i>
+                    </div>
+                    <div class="contact-details">
+                        <h2>CodePen</h2>
+                        <a href="https://codepen.io/nicatabushov">See my experiments</a>
+                    </div>
+                </div>
 
-    if (profileImage.image.enabled) {
-        // Use image
-        avatar.innerHTML = `
-            <img 
-                src="${profileImage.image.src}" 
-                alt="${profileImage.image.alt}"
-                onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'bx ${profileImage.fallbackIcon.class}\'></i>'"
-            >
-        `;
-    } else {
-        // Use icon
-        avatar.innerHTML = `<i class='bx ${profileImage.fallbackIcon.class}'></i>`;
-    }
-}
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class='bx bx-coffee'></i>
+                    </div>
+                    <div class="contact-details">
+                        <h2>Buy me a coffee</h2>
+                        <a href="https://buymeacoffee.com/nicatabushov">Support my work</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
-// Initialize everything
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM Content Loaded - Initializing');
-    initThemeSwitch();
-    initMobileMenu();
-    initProfileImage();
-});
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://t.me/nicatabushov" target="_blank" class="social-icon" title="Telegram">
+                    <i class='bx bxl-telegram'></i>
+                </a>
+                <a href="https://github.com/nicatabushov" target="_blank" class="social-icon" title="GitHub">
+                    <i class='bx bxl-github'></i>
+                </a>
+                <a href="https://instagram.com/nicatabushov" target="_blank" class="social-icon" title="Instagram">
+                    <i class='bx bxl-instagram'></i>
+                </a>
+                <a href="https://www.linkedin.com/in/nicatabushov" target="_blank" class="social-icon" title="LinkedIn">
+                    <i class='bx bxl-linkedin'></i>
+                </a>
+            </div>
+            <p>© 2024 Nicat Abushov. Just a kid with a website.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/typing-effect.js"></script>
+</body>
+</html> 
