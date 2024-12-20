@@ -2056,19 +2056,19 @@ h1 {
 
 /* Different gradients for each word */
 .typing-element[data-current="Nicat Abushov"] .txt {
-    background: linear-gradient(45deg, #4F46E5, #7C3AED);
+    background: linear-gradient(45deg, #2e23ff, #2e0671);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .typing-element[data-current="a Developer"] .txt {
-    background: linear-gradient(45deg, #3B82F6, #10B981);
+    background: linear-gradient(45deg, #ff1d52, #1afdb1);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .typing-element[data-current="a Designer"] .txt {
-    background: linear-gradient(45deg, #EC4899, #F59E0B);
+    background: linear-gradient(45deg, #e9308d, #F59E0B);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
