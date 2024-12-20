@@ -2049,7 +2049,7 @@ h1 {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 2.4rem;
+    font-size: 1rem;
     font-weight: 600;
     padding-right: 4px; /* Add space for cursor */
 }
@@ -2090,7 +2090,7 @@ h1 {
 /* Mobile adjustments */
 @media (max-width: 768px) {
     .typing-element .txt {
-        font-size: 1rem;
+        font-size: 2.6rem;
     }
 }
 
