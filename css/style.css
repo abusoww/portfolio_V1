@@ -2068,7 +2068,7 @@ h1 {
 }
 
 .typing-element[data-current="a Designer"] .txt {
-    background: linear-gradient(45deg, #e9308d, #F59E0B);
+    background: linear-gradient(45deg, #ffffff, #000000);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
