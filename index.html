@@ -4,10 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Nicat Abushov | Personal Website</title>
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/custom-cursor.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/custom-cursor.css">
         <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-        <link href="/css/boxicons.min.css" rel="stylesheet">
+        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     </head>
@@ -31,9 +31,9 @@
 
                 <ul class="nav-links">
                     <li><a href="/" class="nav-link underline-animation active">Main</a></li>
-                    <li><a href="/cv" class="nav-link underline-animation">CV</a></li>
-                    <li><a href="/projects" class="nav-link underline-animation">Projects</a></li>
-                    <li><a href="/contact" class="nav-link underline-animation">Contact</a></li>
+                    <li><a href="/cv/" class="nav-link underline-animation">CV</a></li>
+                    <li><a href="/projects/" class="nav-link underline-animation">Projects</a></li>
+                    <li><a href="/contact/" class="nav-link underline-animation">Contact</a></li>
                 </ul>
                 <button class="theme-switch" id="themeSwitch">
                     <i class='bx bx-sun'></i>
@@ -49,7 +49,7 @@
             </button>
             <div class="mobile-menu-links">
                 <a href="/" class="nav-link underline-animation active">Main</a>
-                <a href="/cv" class="nav-link underline-animation">CV</a>
+                <a href="/cv/" class="nav-link underline-animation">CV</a>
                 <a href="/projects/" class="nav-link underline-animation">Projects</a>
                 <a href="/contact/" class="nav-link underline-animation">Contact</a>
             </div>
@@ -85,37 +85,31 @@
 
             <section class="about-section">
                 <div class="container">
-                    <h2 class="section-heading">About Me</h2>
+                    <h2>About Me</h2>
                     <div class="about-content">
-                        <div class="greeting-text">
-                            Hey! I'm <span class="text-accent">Nicat</span>, 17 years old.
-                        </div>
+                        <p>Hey! I'm <span class="text-purple">Nicat</span>, 17 years old. I love trying new things, diving into <span class="text-blue">technology</span>, and figuring out how everything works. Sometimes I get into <span class="text-green">Caucasian Dances</span>, other times I experiment with <span class="text-orange">Design</span>, and sometimes I read up on <span class="text-yellow">finance</span> and trading.</p>
                         
-                        <div class="content-paragraphs">
-                            <p>
-                                I love trying new things, diving into <span class="bold-keywords technology">technology</span>, 
-                                and figuring out how everything works. Sometimes I get into 
-                                <span class="bold-keywords dances">Caucasian Dances</span>, other times I experiment with 
-                                <span class="bold-keywords design">Design</span>, and sometimes I read up on 
-                                <span class="bold-keywords finance">finance and trading</span>.
-                            </p>
-                            
-                            <p>
-                                This website is my little corner on the internet. It's nothing complicated, 
-                                just a place where I share my <span class="bold-keywords projects">projects</span>, 
-                                experiences, and maybe some ideas. I'm not selling anything or trying to 
-                                impress anyone — it's more of a personal experiment and a way to tell my story.
-                            </p>
-                        </div>
+                        <p>This website is my little corner on the internet. It's nothing complicated, just a place where I share my <span class="text-purple">projects</span>, experiences, and maybe some ideas. I'm not selling anything or trying to impress anyone — it's more of a personal experiment and a way to tell my story.</p>
+                        
+                        <p>Feel free to check it out: you can see my <span class="text-blue">CV</span>, learn about my <span class="text-purple">projects</span>, or just <span class="text-green">reach out</span> to me.</p>
+                    </div>
 
-                        <div class="quick-links">
-                            <h3>Feel free to look around:</h3>
-                            <div class="links-grid">
-                                <span class="link-title">CV</span>
-                                <span class="link-title">Projects</span>
-                                <span class="link-title">Contact</span>
-                            </div>
-                        </div>
+                    <div class="quick-links">
+                        <h3>Feel free to look around:</h3>
+                        <ul>
+                            <li>
+                                <a href="/cv/" class="highlight-blue underline-animation">CV</a>
+                                <span class="link-description">– Learn more about me.</span>
+                            </li>
+                            <li>
+                                <a href="/projects/" class="highlight-purple underline-animation">Projects</a>
+                                <span class="link-description">– See what I've been working on.</span>
+                            </li>
+                            <li>
+                                <a href="/contact/" class="highlight-green underline-animation">Contact</a>
+                                <span class="link-description">– Let's connect.</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </section>
@@ -189,7 +183,7 @@
             </div>
         </footer>
 
-        <script src="/home/vboxuser/Documents/abushov.com-main(1)/abushov.com-main/js/main.js"></script>
+        <script src="js/main.js"></script>
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script>
             AOS.init({
