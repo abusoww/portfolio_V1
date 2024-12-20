@@ -27,9 +27,9 @@
 
 /* Ring */
 .figma-cursor-ring {
-    width: 40px;
-    height: 40px;
-    border: 3px solid rgba(199, 79, 84, 1);
+    width: 55px;
+    height: 55px;
+    border: 3px solid rgb(149, 93, 14);
     border-radius: 50%;
     position: fixed;
     top: 0;
@@ -41,28 +41,22 @@
 /* Dark theme */
 @media (prefers-color-scheme: dark) {
     .figma-cursor-ring {
-        border-color: rgba(199, 79, 84, 1);
+        border-color: rgb(149, 93, 14);
     }
 }
 
 /* Manual dark theme class */
 .dark-theme .figma-cursor-ring,
 [data-theme="dark"] .figma-cursor-ring {
-    border-color: rgba(199, 79, 84, 1);
+    border-color: rgb(149, 93, 14);
 }
 
-/* Hide default cursor */
-*, 
-*::before, 
-*::after {
-    cursor: default !important;
-}
 
 /* Hover state - much larger but same color */
 .figma-cursor.clickable .figma-cursor-ring {
-    width: 120px;
-    height: 120px;
-    border-width: 1.5px;
+    width: 110px;
+    height: 110px;
+    border-width: 2px;
     transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
