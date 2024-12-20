@@ -2090,7 +2090,7 @@ h1 {
 /* Mobile adjustments */
 @media (max-width: 768px) {
     .typing-element .txt {
-        font-size: 2.6rem;
+        font-size: 2.5rem;
     }
 }
 
