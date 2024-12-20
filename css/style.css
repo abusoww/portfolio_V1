@@ -2051,7 +2051,7 @@ h1 {
     -webkit-text-fill-color: transparent;
     font-size: 2.4rem;
     font-weight: 600;
-    padding-right: 4px; /* Add space for cursor */
+    padding-right: 1px; /* Add space for cursor */
 }
 
 /* Different gradients for each word */
@@ -2090,7 +2090,7 @@ h1 {
 /* Mobile adjustments */
 @media (max-width: 768px) {
     .typing-element .txt {
-        font-size: 1rem;
+        font-size: 2.6rem;
     }
 }
 
