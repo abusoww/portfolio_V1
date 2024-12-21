@@ -1647,7 +1647,7 @@ h1 {
 }
 
 .text-yellow {
-    color: #299589;
+    color: #d639a7;
     font-weight: 600;
 }
 
@@ -1669,7 +1669,7 @@ h1 {
 }
 
 [data-theme="light"] .text-yellow {
-    color: #299589;
+    color: #d639a7;
 }
 
 @media (max-width: 768px) {
