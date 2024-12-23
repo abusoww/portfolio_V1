@@ -1920,20 +1920,7 @@ h1 {
     animation: fade 10s infinite alternate;
 }
 
-.layer-2 {
-    background: linear-gradient(-45deg, #34D399, #3B82F6);
-    animation: fade 12s infinite alternate;
-}
 
-.layer-3 {
-    background: linear-gradient(60deg, #EC4899, #FBBF24);
-    animation: fade 15s infinite alternate;
-}
-
-@keyframes fade {
-    0% { opacity: 0.1; }
-    100% { opacity: 0.3; }
-}
 
 /* Underline animation effect */
 .underline-animation {
