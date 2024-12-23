@@ -1915,10 +1915,6 @@ h1 {
     transition: opacity 0.5s ease;
 }
 
-.layer-1 {
-    background: linear-gradient(45deg, #6366F1, #8B5CF6);
-    animation: fade 10s infinite alternate;
-}
 
 
 @keyframes fade {
