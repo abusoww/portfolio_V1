@@ -1,0 +1,212 @@
+    <!DOCTYPE html>
+    <html lang="az">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nicat Abushov | Portfolio |Personal Website</title>
+        <meta name="description" content="Nicat Abushov | AZERBAIJAN">
+        <meta name="keywords" content="Web inkişafı, müasir veb dizayn, portfel, Nicat Abuşov, web development, portfolio">
+        <meta name="author" content="Nicat Abuşov">
+
+        
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/custom-cursor.css">
+        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    </head>
+    <body class="light-theme">
+        <div class="simple-background">
+            <div class="color-layer layer-1"></div>
+            <div class="color-layer layer-2"></div>
+            <div class="color-layer layer-3"></div>
+        </div>
+
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">NA</span>
+                    <div class="logo-dot"></div>
+                </a>
+                
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu">
+                    <i class='bx bx-menu'></i>
+                </button>
+
+                <ul class="nav-links">
+                    <li><a href="/" class="nav-link underline-animation active">Main</a></li>
+                    <li><a href="/cv" class="nav-link underline-animation">CV</a></li>
+                    <li><a href="/projects" class="nav-link underline-animation">Projects</a></li>
+                    <li><a href="/contact" class="nav-link underline-animation">Contact</a></li>
+                </ul>
+                <button class="theme-switch" id="themeSwitch">
+                    <i class='bx bx-sun'></i>
+                    <i class='bx bx-moon'></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile menu -->
+        <div class="mobile-menu">
+            <button class="mobile-menu-btn" aria-label="Close menu">
+                <i class='bx bx-x'></i>
+            </button>
+            <div class="mobile-menu-links">
+                <a href="/" class="nav-link underline-animation active">Main</a>
+                <a href="/cv" class="nav-link underline-animation">CV</a>
+                <a href="/projects" class="nav-link underline-animation">Projects</a>
+                <a href="/contact" class="nav-link underline-animation">Contact</a>
+            </div>
+        </div>
+
+        <main>
+            <section class="hero">
+                <div class="hero-content">
+                    <div class="intro-wrapper">
+                        <div class="hero-intro">
+                            <h1>Hello!</h1>
+                            <div class="intro-lines">
+                                <p class="intro-line">
+                                    I'm <span class="typing-element" data-words='["Nicat Abushov", "a Developer", "a Designer"]'></span>
+                                </p>
+                                <p class="intro-line split-text">
+                                    <span class="line-part">This is my personal</span>
+                                    <span class="line-part">space in web</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Profile Image -->
+                        <div class="profile-image">
+                            <div class="temp-avatar">
+                                <img src="https://i.pinimg.com/originals/84/e6/41/84e641862dd2bdc3472f3f5bb9783502.gif" alt="Nicat Abuşov Portfolio Image">
+                                <div class="avatar-glow"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="about-section">
+                <div class="container">
+                    <h2>About Me</h2>
+                    <div class="about-content">
+                        <p>Hey! I'm <span class="text-purple">Nicat</span>, 17 years old. I love trying new things, diving into <span class="text-blue">technology</span>, and figuring out how everything works. I find inspiration in the art of <span class="text-green">Caucasian Dances</span>, experimenting with innovative <span class="text-orange">Design</span> concepts, and mastering <span class="text-yellow">financial and trading</span>  techniques.</p>
+                        
+                        <p>This website is my little corner on the internet. It's nothing complicated, just a place where I share my <span class="text-purple">projects</span>, experiences, and maybe some ideas. I'm not selling anything or trying to impress anyone — it's more of a personal experiment and a way to tell my <span class="text-orange">story</span>.</p>
+                    </div>
+
+                    <div class="quick-links">
+                        <h3>Feel free to look around:</h3>
+                        <ul>
+                            <li>
+                                <a href="/cv" class="highlight-blue underline-animation">CV</a>
+                                <span class="link-description">– Learn more about me.</span>
+                            </li>
+                            <li>
+                                <a href="/projects" class="highlight-purple underline-animation">Projects</a>
+                                <span class="link-description">– See what I've been working on.</span>
+                            </li>
+                            <li>
+                                <a href="/contact" class="highlight-purple underline-animation">Contact</a>
+                                <span class="link-description">– Let's connect.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide-section current-work">
+                <div class="container">
+                    <div class="work-item" data-aos="fade-right" data-aos-delay="100">
+                        <i class='bx bx-calculator work-icon'></i>
+                        <h3>Exam Score Calculator</h3>
+                        <p>I've developed an online exam score calculator (<a href="https://abushov.vercel.app" target="_blank" class="highlight">abushov.vercel.app</a>) that helps students calculate their exam scores easily and efficiently.</p>
+                    </div>
+                    
+                    <div class="work-item" data-aos="fade-left" data-aos-delay="200">
+                        <i class='bx bx-book work-icon'></i>
+                        <h3>IMTAHANCE</h3>
+                        <p>Currently, I'm working on IMTAHANCE, an online platform where students can prepare for exams. It's been exciting to build it and see how it helps people improve.</p>
+                    </div>
+                    
+                    <div class="work-item" data-aos="fade-right" data-aos-delay="300">
+                        <i class='bx bx-shield work-icon'></i>
+                        <h3>Cybersecurity</h3>
+                        <p>At the same time, I'm studying cybersecurity to understand how to protect information on the internet.</p>
+                        <span class="note">(Yes, I'm learning to be a digital ninja.)</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="goals-section">
+                <div class="container">
+                    <h2>My Goals and Future</h2>
+                    <div class="goals-grid">
+                        <div class="goal-card" data-aos="fade-up" data-aos-delay="100">
+                            <span class="goal-number">01</span>
+                            <h3>Focus on getting the best exam results possible</h3>
+                            <p>This year is all about studying and preparing for my exams, aiming for the highest marks to open up future opportunities.</p>
+                        </div>
+                        
+                        <div class="goal-card" data-aos="fade-up" data-aos-delay="200">
+                            <span class="goal-number">02</span>
+                            <h3>Build my own online school, IMTAHANCE</h3>
+                            <p>After my exams, I plan to fully dedicate myself to growing my online school, helping students succeed with their studies.</p>
+                        </div>
+                        
+                        <div class="goal-card" data-aos="fade-up" data-aos-delay="300">
+                            <span class="goal-number">03</span>
+                            <h3>Launch the largest charity foundation in Azerbaijan</h3>
+                            <p>Once I've built a solid foundation with my projects, my goal is to create a charity that supports those in need and makes a real difference in the country.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container">
+                <div class="social-links">
+                    <a href="https://t.me/abusoww" target="_blank" class="social-icon" title="Telegram">
+                        <i class='bx bxl-telegram'></i>
+                    </a>
+                    <a href="https://github.com/abusoww" target="_blank" class="social-icon" title="GitHub">
+                        <i class='bx bxl-github'></i>
+                    </a>
+                    <a href="https://instagram.com/nicat.abushov" target="_blank" class="social-icon" title="Instagram">
+                        <i class='bx bxl-instagram'></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/nicatabushov" target="_blank" class="social-icon" title="LinkedIn">
+                        <i class='bx bxl-linkedin'></i>
+                    </a>
+                </div>
+                <p>© 2024 Nicat Abushov. Just a kid with a website.</p>
+            </div>
+        </footer>
+
+        <script src="js/main.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                duration: 800,
+                once: true,
+                offset: 100
+            });
+        </script>
+        <script src="/js/typing.js"></script>
+        <script src="/js/custom-cursor.js" defer></script>
+        <script>
+            // Initialize typing effect with delays
+            document.addEventListener('DOMContentLoaded', function() {
+                const elements = document.querySelectorAll('.typing-element');
+                elements.forEach(element => {
+                    const words = JSON.parse(element.getAttribute('data-words'));
+                    // Reduced wait time to 2000ms and start delay to 1000ms
+                    new TypeWriter(element, words, 2000, 1000);
+                });
+            });
+        </script>
+    </body>
+    </html> 
