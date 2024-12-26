@@ -1614,7 +1614,7 @@ h1 {
 }
 
 [data-theme="light"] .work-item:nth-child(4) h3 {
-    color: #28ace0; /* Темно-зеленый */
+    color: #f3ef2c; /* Темно-зеленый */
 }
 
 [data-theme="light"] .goal-card:nth-child(1) h3 {
