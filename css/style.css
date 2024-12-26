@@ -1602,15 +1602,19 @@ h1 {
 
 /* Светлая тема */
 [data-theme="light"] .work-item:nth-child(1) h3 {
-    color: #4F46E5; /* Темно-фиолетовый */
+    color: #2fe9b4; /* Темно-фиолетовый */
 }
 
 [data-theme="light"] .work-item:nth-child(2) h3 {
-    color: #2563EB; /* Темно-синий */
+    color: #c731f5; /* Темно-синий */
 }
 
 [data-theme="light"] .work-item:nth-child(3) h3 {
-    color: #059669; /* Темно-зеленый */
+    color: #e37137; /* Темно-зеленый */
+}
+
+[data-theme="light"] .work-item:nth-child(4) h3 {
+    color: #28ace0; /* Темно-зеленый */
 }
 
 [data-theme="light"] .goal-card:nth-child(1) h3 {
