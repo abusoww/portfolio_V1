@@ -1040,14 +1040,6 @@ section {
     background: transparent;
 }
 
-
-.container h3 {
-    font-size: 2.5rem;
-    color: var(--primary);
-    margin-bottom: 2rem;
-}
-
-
 /* Убираем все backdrop-filter */
 section::before {
     display: none;
