@@ -346,8 +346,8 @@ main {
 /* Mobile sizes */
 @media (max-width: 768px) {
     .temp-avatar {
-        width: 250px; /* Smaller size for mobile */
-        height: 250px; /* Smaller size for mobile */
+        width: 210px; /* Smaller size for mobile */
+        height: 210px; /* Smaller size for mobile */
     }
 }
 
