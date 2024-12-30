@@ -354,8 +354,8 @@ main {
 /* Very small screens (e.g., portrait phones) */
 @media (max-width: 480px) {
     .temp-avatar {
-        width: 100px; /* Even smaller size for very small screens */
-        height: 100px; /* Even smaller size for very small screens */
+        width: 200px; /* Even smaller size for very small screens */
+        height: 200px; /* Even smaller size for very small screens */
     }
 }
 
