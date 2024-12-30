@@ -327,8 +327,8 @@ main {
 
 
 .temp-avatar {
-    width: 100px;
-    height: 100px;
+    width: 300px;
+    height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
