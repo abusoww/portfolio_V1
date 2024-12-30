@@ -346,16 +346,16 @@ main {
 /* Mobile sizes */
 @media (max-width: 768px) {
     .temp-avatar {
-        width: 200px; /* Smaller size for mobile */
-        height: 200px; /* Smaller size for mobile */
+        width: 250px; /* Smaller size for mobile */
+        height: 250px; /* Smaller size for mobile */
     }
 }
 
 /* Very small screens (e.g., portrait phones) */
 @media (max-width: 480px) {
     .temp-avatar {
-        width: 200px; /* Even smaller size for very small screens */
-        height: 200px; /* Even smaller size for very small screens */
+        width: 250px; /* Even smaller size for very small screens */
+        height: 250px; /* Even smaller size for very small screens */
     }
 }
 
