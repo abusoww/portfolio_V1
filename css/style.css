@@ -327,8 +327,8 @@ main {
 
 
 .temp-avatar {
-    width: 150px; /* Set a specific size */
-    height: 150px; /* Set the same height as width for a perfect circle */
+    width: 200px; /* Set a specific size */
+    height: 200px; /* Set the same height as width for a perfect circle */
     display: flex;
     align-items: center;
     justify-content: center;
