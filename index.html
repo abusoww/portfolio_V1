@@ -217,6 +217,22 @@
             });
         });
     </script>
+    </script>
+    document.addEventListener('contextmenu', event => event.preventDefault());
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'F12') {
+            e.preventDefault();
+        }
+        if (e.ctrlKey && e.key === 'u') {
+            e.preventDefault();
+        }
+        if (e.ctrlKey && e.key === 's') {
+            e.preventDefault();
+        }
+    </script>
+
+
+    
     <script defer src="https://cloud.umami.is/script.js" data-website-id="9d723932-1d81-4aa2-8dfb-d642b2eddc8a"></script>
 </body>
 </html> 
