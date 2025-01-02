@@ -84,32 +84,74 @@ document.addEventListener('DOMContentLoaded', function() {
 // Prevent right-click context menu
 document.addEventListener('contextmenu', event => event.preventDefault());
 
-// Keydown event listener for disabling specific keys and combinations
+// Disable specific keys and combinations
 document.addEventListener('keydown', function(event) {
-    const forbiddenKeys = [
-        { key: 'F12', ctrlKey: false },         // Developer Tools
+    const forbiddenCombinations = [
+        // Developer Tools and Inspect Elements
+        { key: 'F12' },                             // DevTools
         { key: 'I', ctrlKey: true, shiftKey: true }, // DevTools Inspect
         { key: 'J', ctrlKey: true, shiftKey: true }, // DevTools Console
-        { key: 'C', ctrlKey: true, shiftKey: true }, // DevTools Sources
-        { key: 'U', ctrlKey: true },           // View Page Source
-        { key: 'S', ctrlKey: true },           // Save Page
-        { key: 'P', ctrlKey: true },           // Print Page
-        { key: 'H', ctrlKey: true, shiftKey: true }, // Chrome History
-        { key: 'R', ctrlKey: true },           // Reload
-        { key: 'R', ctrlKey: true, shiftKey: true }, // Hard Reload
-        { key: 'A', ctrlKey: true },           // Select All
-        { key: 'F', ctrlKey: true },           // Find on Page
-        { key: 'E', ctrlKey: true },           // Edit Mode
-        { key: 'F5', ctrlKey: false }          // Refresh (F5)
+        { key: 'C', ctrlKey: true, shiftKey: true }, // DevTools Copy Element
+        { key: 'K', ctrlKey: true },                // DevTools Shortcut in Firefox
+
+        // Viewing Source and Debugging
+        { key: 'U', ctrlKey: true },                // View Page Source
+        { key: 'S', ctrlKey: true, altKey: true },  // Save as (Firefox)
+        { key: 'L', ctrlKey: true },                // Focus URL bar
+        { key: 'R', ctrlKey: true, shiftKey: true }, // Hard Reload (Chrome/Edge)
+
+        // Saving, Copying, and Selecting Content
+        { key: 'S', ctrlKey: true },                // Save Page
+        { key: 'C', ctrlKey: true },                // Copy
+        { key: 'A', ctrlKey: true },                // Select All
+        { key: 'X', ctrlKey: true },                // Cut
+        { key: 'V', ctrlKey: true },                // Paste
+        { key: 'Z', ctrlKey: true },                // Undo
+        { key: 'Y', ctrlKey: true },                // Redo
+
+        // Printing and Page Actions
+        { key: 'P', ctrlKey: true },                // Print
+        { key: 'D', ctrlKey: true },                // Bookmark
+        { key: 'F', ctrlKey: true },                // Find on Page
+        { key: 'E', ctrlKey: true },                // Edit
+
+        // Refreshing and Navigation
+        { key: 'F5' },                              // Refresh
+        { key: 'R', ctrlKey: true },                // Reload
+        { key: 'H', ctrlKey: true, shiftKey: true }, // Open History
+        { key: 'T', ctrlKey: true },                // New Tab
+        { key: 'N', ctrlKey: true },                // New Window
+
+        // Zoom and Accessibility
+        { key: '0', ctrlKey: true },                // Reset Zoom
+        { key: '+', ctrlKey: true },                // Zoom In
+        { key: '-', ctrlKey: true },                // Zoom Out
+
+        // OS-Specific Keys
+        { key: 'F11' },                             // Fullscreen (Windows)
+        { key: 'Q', ctrlKey: true, altKey: true },  // Quit (Mac)
+        { key: 'Option', altKey: true },            // Mac Option Key
+
+        // Miscellaneous Keys
+        { key: 'Escape' },                          // Dismiss Modals
+        { key: 'Tab', ctrlKey: true },              // Switch Tabs
+        { key: 'Backspace', altKey: true }          // Navigate Back (Firefox)
     ];
 
-    // Check if the pressed key matches any forbidden key combination
-    for (const { key, ctrlKey = false, shiftKey = false } of forbiddenKeys) {
-        if (event.key === key && event.ctrlKey === ctrlKey && event.shiftKey === shiftKey) {
+    // Check if the pressed key matches any forbidden combination
+    for (const { key, ctrlKey = false, shiftKey = false, altKey = false } of forbiddenCombinations) {
+        if (
+            event.key === key &&
+            event.ctrlKey === ctrlKey &&
+            event.shiftKey === shiftKey &&
+            event.altKey === altKey
+        ) {
             event.preventDefault();
+            console.log(`Blocked key combination: ${key} with modifiers Ctrl: ${ctrlKey}, Shift: ${shiftKey}, Alt: ${altKey}`);
             return;
         }
     }
 });
+
 
 });
