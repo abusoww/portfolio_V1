@@ -81,16 +81,35 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    document.addEventListener('contextmenu', event => event.preventDefault());
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'F12') {
-            e.preventDefault();
+// Prevent right-click context menu
+document.addEventListener('contextmenu', event => event.preventDefault());
+
+// Keydown event listener for disabling specific keys and combinations
+document.addEventListener('keydown', function(event) {
+    const forbiddenKeys = [
+        { key: 'F12', ctrlKey: false },         // Developer Tools
+        { key: 'I', ctrlKey: true, shiftKey: true }, // DevTools Inspect
+        { key: 'J', ctrlKey: true, shiftKey: true }, // DevTools Console
+        { key: 'C', ctrlKey: true, shiftKey: true }, // DevTools Sources
+        { key: 'U', ctrlKey: true },           // View Page Source
+        { key: 'S', ctrlKey: true },           // Save Page
+        { key: 'P', ctrlKey: true },           // Print Page
+        { key: 'H', ctrlKey: true, shiftKey: true }, // Chrome History
+        { key: 'R', ctrlKey: true },           // Reload
+        { key: 'R', ctrlKey: true, shiftKey: true }, // Hard Reload
+        { key: 'A', ctrlKey: true },           // Select All
+        { key: 'F', ctrlKey: true },           // Find on Page
+        { key: 'E', ctrlKey: true },           // Edit Mode
+        { key: 'F5', ctrlKey: false }          // Refresh (F5)
+    ];
+
+    // Check if the pressed key matches any forbidden key combination
+    for (const { key, ctrlKey = false, shiftKey = false } of forbiddenKeys) {
+        if (event.key === key && event.ctrlKey === ctrlKey && event.shiftKey === shiftKey) {
+            event.preventDefault();
+            return;
         }
-        if (e.ctrlKey && e.key === 'u') {
-            e.preventDefault();
-        }
-        if (e.ctrlKey && e.key === 's') {
-            e.preventDefault();
-        }
-    });
+    }
+});
+
 });
