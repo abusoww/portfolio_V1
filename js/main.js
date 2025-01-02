@@ -80,4 +80,17 @@ document.addEventListener('DOMContentLoaded', function() {
             icon.classList.add('bx-menu');
         }
     });
+
+    document.addEventListener('contextmenu', event => event.preventDefault());
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'F12') {
+            e.preventDefault();
+        }
+        if (e.ctrlKey && e.key === 'u') {
+            e.preventDefault();
+        }
+        if (e.ctrlKey && e.key === 's') {
+            e.preventDefault();
+        }
+    });
 });
