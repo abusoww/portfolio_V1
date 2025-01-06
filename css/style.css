@@ -333,7 +333,7 @@ main {
     justify-content: center;
     border-radius: 30%;
     overflow: hidden;
-    background: var(--primary);
+    background: var(--surface);
 }
 
 .temp-avatar img {
