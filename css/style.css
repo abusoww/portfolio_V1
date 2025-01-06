@@ -343,7 +343,11 @@ main {
 }
 
 
-
+.temp-avatar i {
+    font-size: 8rem;
+    color: var(--accent);
+    transition: var(--transition);
+}
 
 /* Hero Main Section */
 .hero-main {
@@ -540,7 +544,7 @@ body.dark-theme .social-icon {
     }
 
     .temp-avatar i {
-        font-size: 6rem;
+        font-size: 10rem;
     }
 
     .hero-main h2 {
