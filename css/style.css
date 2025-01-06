@@ -331,7 +331,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
+    border-radius: 30%;
     overflow: hidden;
     background: var(--primary);
 }
@@ -544,7 +544,7 @@ body.dark-theme .social-icon {
     }
 
     .temp-avatar i {
-        font-size: 10rem;
+        font-size: 6rem;
     }
 
     .hero-main h2 {
