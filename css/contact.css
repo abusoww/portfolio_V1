@@ -166,7 +166,7 @@ body.dark-theme .contact-item {
     content: '|';
     position: absolute;
     right: -8px;
-    top: 100%;
+    top: 50%;
     transform: translateY(-50%);
     color: var(--accent);
     animation: cursor-blink 0.8s infinite;
