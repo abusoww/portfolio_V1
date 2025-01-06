@@ -343,11 +343,7 @@ main {
 }
 
 
-.temp-avatar i {
-    font-size: 8rem;
-    color: var(--accent);
-    transition: var(--transition);
-}
+
 
 /* Hero Main Section */
 .hero-main {
