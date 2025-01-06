@@ -165,8 +165,8 @@ body.dark-theme .contact-item {
 .typing-heading::after {
     content: '|';
     position: absolute;
-    right: -1px;
-    top: 50%;
+    right: -8px;
+    top: 100%;
     transform: translateY(-50%);
     color: var(--accent);
     animation: cursor-blink 0.8s infinite;
