@@ -158,14 +158,14 @@ body.dark-theme .contact-item {
 }
 
 .typing-heading {
-    position: absolute;
+    position: relative;
     display: inline-block;
 }
 
 .typing-heading::after {
     content: '|';
     position: absolute;
-    right: -8px;
+    right: -1px;
     top: 50%;
     transform: translateY(-50%);
     color: var(--accent);
