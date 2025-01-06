@@ -1,0 +1,27 @@
+# SEO-Optimized Robots.txt for abusov.com
+
+# Allow all crawlers to access the main content
+User-agent: *
+# Disallow: /admin/
+# Disallow: /login/
+# Disallow: /private/
+# Disallow: /checkout/
+
+# Allow search engines to crawl static content (images, CSS, JS)
+Allow: /css/
+Allow: /js/
+
+# Allow search engines to access important pages like the home, CV, projects, and contact
+Allow: /cv
+Allow: /projects
+Allow: /contact
+Allow: /resume
+
+# Block search engines from crawling duplicate content (if any)
+Disallow: /search/
+
+# Sitemap location to guide search engines for better indexing
+Sitemap: https://www.abusov.com/sitemap.xml
+
+# Crawl-delay to prevent overloading the server (optional)
+# Crawl-delay: 10
