@@ -74,7 +74,13 @@
     }
     </script>
 
-  
+
+    <script>
+        if (!localStorage.getItem('darkTheme')) {
+            localStorage.setItem('darkTheme', 'false');
+        }
+    </script>
+
 </head>
 <body>
     <div class="simple-background">
