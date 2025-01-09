@@ -1,0 +1,232 @@
+<!DOCTYPE html><html lang="en"><head>
+    <link rel="icon" data-savepage-href="https://freethinker1.ru/favicon.ico" href="">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Вопросник</title>
+        
+        <!-- Yandex.Metrika counter -->
+        <script data-savepage-type="" type="text/plain" async="" data-savepage-src="https://mc.yandex.ru/metrika/tag.js"></script><script data-savepage-type="text/javascript" type="text/plain"></script>
+        <noscript><div><img src="https://mc.yandex.ru/watch/99438424" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+    
+        <style>
+            body {
+                margin: 0;
+                font-family: 'Inter', sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            }
+            .container {
+                text-align: center;
+                width: 500px;
+                padding: 50px 30px;
+                border-radius: 15px;
+                background: #ffffff;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            }
+            input[type="text"] {
+                width: 100%;
+                padding: 15px;
+                margin-bottom: 20px;
+                border: 2px solid #90caf9;
+                border-radius: 8px;
+                font-size: 16px;
+                box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+                box-sizing: border-box;
+            }
+            button {
+                padding: 12px 25px;
+                font-size: 16px;
+                font-weight: bold;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: background-color 0.3s ease, transform 0.2s ease;
+            }
+            button:hover {
+                transform: scale(1.05);
+            }
+            .support-btn {
+                background-color: #ffcc00;
+                color: #000;
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                padding: 15px 30px;
+                font-size: 16px;
+                border-radius: 10px;
+                z-index: 1000;
+                transition: all 1s ease;
+            }
+            .support-btn.fullscreen {
+                width: 100%;
+                height: 100%;
+                font-size: 40px;
+                border-radius: 0;
+                top: 0;
+                left: 0;
+                margin: 0;
+            }
+            .close-btn {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                background: none;
+                color: white;
+                border: none;
+                font-size: 48px;
+                font-weight: bold;
+                cursor: pointer;
+                display: none;
+                z-index: 1001;
+                animation: pulse 1.5s infinite;
+            }
+            .support-btn.fullscreen + .close-btn {
+                display: block;
+            }
+            .create-question-btn {
+                position: fixed;
+                top: 20px;
+                left: 20px;
+                background-color: #42a5f5;
+                color: white;
+                padding: 10px 20px;
+                font-size: 16px;
+                border-radius: 8px;
+                cursor: pointer;
+                z-index: 1000;
+                transition: background-color 0.3s ease, transform 0.2s ease;
+                display: none;
+            }
+            .create-question-btn.visible {
+                display: block;
+            }
+            .create-question-btn:hover {
+                background-color: #1e88e5;
+            }
+            @keyframes pulse {
+                0% {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+                50% {
+                    transform: scale(1.1);
+                    opacity: 0.7;
+                }
+                100% {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+            }
+            .share-btn {
+                background-color: #42a5f5;
+                color: white;
+                display: none;
+            }
+            .share-btn:hover {
+                background-color: #1e88e5;
+            }
+            .question {
+                margin-bottom: 20px;
+                font-size: 18px;
+                font-weight: bold;
+                color: #424242;
+                word-wrap: break-word;
+            }
+            .response-buttons {
+                margin-top: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+            }
+            .yes-btn {
+                background-color: #66bb6a;
+                color: white;
+                transition: transform 0.2s ease, box-shadow 0.3s ease;
+            }
+            .yes-btn:active {
+                transform: scale(0.95);
+                box-shadow: 0 0 20px 5px rgba(102, 187, 106, 0.7);
+            }
+            .yes-btn:hover {
+                background-color: #43a047;
+            }
+            .no-btn {
+                background-color: #ef5350;
+                color: white;
+                position: relative;
+                transition: transform 0.3s ease, opacity 0.5s ease;
+            }
+            .no-btn:hover {
+                background-color: #e53935;
+            }
+            .no-btn.hidden {
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 1s ease;
+            }
+            .result {
+                margin-top: 20px;
+                font-size: 18px;
+                color: #424242;
+                font-weight: bold;
+            }
+            @media (max-width: 768px) {
+                .container {
+                    width: 90%;
+                    padding: 20px;
+                }
+                button {
+                    padding: 10px 20px;
+                    font-size: 14px;
+                }
+            }
+        </style>
+    
+    <style id="savepage-cssvariables">
+      :root {
+      }
+    </style>
+    <script id="savepage-shadowloader" type="text/javascript">
+      "use strict";
+      window.addEventListener("DOMContentLoaded",
+      function(event) {
+        savepage_ShadowLoader(5);
+      },false);
+      function savepage_ShadowLoader(c){createShadowDOMs(0,document.documentElement);function createShadowDOMs(a,b){var i;if(b.localName=="iframe"||b.localName=="frame"){if(a<c){try{if(b.contentDocument.documentElement!=null){createShadowDOMs(a+1,b.contentDocument.documentElement)}}catch(e){}}}else{if(b.children.length>=1&&b.children[0].localName=="template"&&b.children[0].hasAttribute("data-savepage-shadowroot")){b.attachShadow({mode:"open"}).appendChild(b.children[0].content);b.removeChild(b.children[0]);for(i=0;i<b.shadowRoot.children.length;i++)if(b.shadowRoot.children[i]!=null)createShadowDOMs(a,b.shadowRoot.children[i])}for(i=0;i<b.children.length;i++)if(b.children[i]!=null)createShadowDOMs(a,b.children[i])}}}
+    </script>
+    <meta name="savepage-url" content="https://freethinker1.ru/?q=сосал?">
+    <meta name="savepage-title" content="Вопросник">
+    <meta name="savepage-pubdate" content="Unknown">
+    <meta name="savepage-from" content="https://freethinker1.ru/?q=сосал?">
+    <meta name="savepage-date" content="Thu Jan 09 2025 19:59:49 GMT+0400 (Azerbaijan Standard Time)">
+    <meta name="savepage-state" content="Standard Items; Retain cross-origin frames; Merge CSS images; Remove unsaved URLs; Load lazy images in existing content; Max frame depth = 5; Max resource size = 50MB; Max resource time = 10s;">
+    <meta name="savepage-version" content="28.11">
+    <meta name="savepage-comments" content="">
+      </head>
+    <body>
+        <div class="container">
+            <div class="input-section" style="display: none;">
+                <input type="text" id="question" placeholder="Введите ваш вопрос..." value="">
+                <button class="share-btn" id="share-btn">Поделиться</button>
+            </div>
+            <div class="question-section" style="display: block;">
+                <div class="question" id="display-question">сосал?</div>
+                <div class="response-buttons">
+                    <button class="yes-btn">Да</button>
+                    <button class="no-btn hidden" id="no-btn" style="transform: translate(230.885px, 73.8957px);">Нет</button>
+                </div>
+                <div class="result"></div>
+            </div>
+        </div>
+        <button class="support-btn" id="support-btn">На пиццу для AIG🧡</button>
+        <button class="create-question-btn visible" id="create-question-btn">Создать вопрос</button>
+        <button class="close-btn" id="close-btn" style="display: none;">×</button>
+    
+        <script data-savepage-type="" type="text/plain"></script>
+    
+    </body></html>
